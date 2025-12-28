@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
+import heroImage from "@assets/main-screen-1_1766958112828.png";
 
 // Animation variants
 const fadeIn = {
@@ -135,7 +136,7 @@ export default function Home() {
                {/* Phone Frame Mockup - Image already contains frame */}
                <div className="relative z-10 drop-shadow-2xl">
                  <img 
-                   src="/attached_assets/main-screen-1_1766958112828.png" 
+                   src={heroImage}
                    alt="Still App Interface" 
                    className="w-full h-auto"
                  />
