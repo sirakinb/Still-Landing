@@ -1,0 +1,230 @@
+# Still App Landing Page Copy
+
+---
+
+## Hero Section
+
+### Announcement Badge
+**Public Beta is Live**
+
+### Headline
+**Your Meditation. Your Music.**
+
+### Subheadline
+Still lets you create personalized meditation music with AI. Describe the mood you want, choose a style, and generate a unique soundscape made just for you.
+
+### Primary CTA Button
+Join the Beta
+
+---
+
+## Value Proposition Bar
+
+Create meditation music as unique as your practice.
+
+---
+
+## Problem Statement Section
+
+### Section Header
+Generic Playlists Weren't Made for You
+
+### Body Copy
+Every meditation app gives you the same library. The same ocean sounds. The same piano loops. But your practice is personal. Why should your music be generic?
+
+Still puts you in control. Describe what you need — a calm forest at dawn, the rhythm of gentle rain, a warm ambient hum — and watch as AI creates something completely original, just for this moment.
+
+---
+
+## Core Feature Section
+
+### Section Header
+AI-Generated Meditation Music
+
+### Body Copy
+Powered by Suno AI, Still transforms your words into original meditation tracks. No two creations are the same.
+
+### How It Works
+
+**1. Choose Your Style**
+Select from seven handcrafted presets — Ambient, Nature, Piano, Tibetan, Binaural, Lo-fi, Classical — or define your own custom style.
+
+**2. Describe the Mood**
+Tell Still what you're feeling. "A quiet evening by a mountain lake." "Deep breathing with resonant tones." "Floating through warm, golden light." Your words become your music.
+
+**3. Generate and Meditate**
+In about a minute, you'll have a unique, high-quality meditation track ready to use. Save it to your library and return to it whenever you need.
+
+---
+
+## Style Presets Section
+
+### Section Header
+Seven Styles. Infinite Possibilities.
+
+**Ambient** — Atmospheric, ethereal soundscapes
+**Nature** — Organic, peaceful sounds of the natural world
+**Piano** — Soft, melodic, minimalist compositions
+**Tibetan** — Singing bowls and spiritual resonance
+**Binaural** — Deep, resonant tones for healing
+**Lo-fi** — Warm, relaxed, gentle rhythms
+**Classical** — Serene orchestral arrangements
+
+Or go custom. Define your own style with as much detail as you want.
+
+---
+
+## Library Section
+
+### Section Header
+Your Creations. Your Library.
+
+### Body Copy
+Every track you generate is saved to your personal library. Preview your creations, use them for timed sessions, and build a collection of soundscapes that are truly yours.
+
+Still also includes curated sessions like Ocean Breathing and Rainfall Calm — ready to use when you want something familiar.
+
+---
+
+## Timed Sessions Section
+
+### Section Header
+Sessions That Fit Your Life
+
+### Body Copy
+Choose your duration — 3 minutes between meetings, 10 minutes in the morning, or 30 minutes for a deep practice. Still adapts to your schedule, not the other way around.
+
+Each session opens and closes with gentle chimes, giving you a seamless transition into and out of stillness.
+
+---
+
+## Progress Tracking Section
+
+### Section Header
+Watch Your Practice Grow
+
+### Body Copy
+Track your streak, total minutes, and session history. See your last session at a glance and pick up where you left off. No pressure. No gamification. Just simple awareness of your progress.
+
+---
+
+## Beta Section
+
+### Section Header
+Join the Public Beta
+
+### Body Copy
+Still is now available for iOS. As a beta user, you get early access to AI-generated meditation music and help shape what comes next.
+
+Your feedback matters. Every feature we build starts with what our community needs.
+
+### CTA Button
+Download the Beta
+
+### Supporting Text
+Available on iOS 16 and later. Free during beta.
+
+---
+
+## Feature Summary
+
+**What Still Offers:**
+- AI-generated meditation music from your descriptions
+- 7 style presets plus fully custom options
+- Personal library for all your created tracks
+- Curated soundscapes (ocean, rain, guided audio)
+- Timed sessions from 3 to 45 minutes
+- Streak and progress tracking
+- Offline playback for saved music
+- Sign in with Apple to sync across devices
+
+---
+
+## Testimonials Section
+
+### Section Header
+What Beta Users Are Saying
+
+*"I described 'a warm sunrise over quiet water' and the track it created was exactly what I needed. I've used it every morning since."*
+— Beta User
+
+*"Other apps give you 10 nature tracks and call it a library. Still lets me create something new whenever I want."*
+— Beta User
+
+*"The Tibetan style is incredible. I've generated five different tracks and each one feels completely unique."*
+— Beta User
+
+---
+
+## FAQ Section
+
+### Section Header
+Questions
+
+**How does the AI music generation work?**
+You describe the mood, imagery, or feeling you want. Choose a style (Ambient, Piano, Nature, etc.) and whether you want instrumental or vocals. Still uses Suno AI to generate a completely original meditation track based on your input.
+
+**How long does it take to generate music?**
+Typically 1-2 minutes. You'll see a progress indicator while your track is being created.
+
+**Is Still free?**
+Yes, Still is free during the public beta. We'll introduce optional premium features in the future, but core functionality will remain accessible.
+
+**Can I use my generated music in meditation sessions?**
+Absolutely. Save any track to your library and use it as the soundtrack for timed meditation sessions.
+
+**What devices are supported?**
+Still is available for iPhone running iOS 16 or later. iPad support is coming soon.
+
+**Do I need an account?**
+No. You can use Still without signing in. Create an account with Apple to sync your progress and library across devices.
+
+---
+
+## Final CTA Section
+
+### Section Header
+Create Your First Track
+
+### Body Copy
+Describe what stillness sounds like to you. We'll make it real.
+
+### Primary CTA Button
+Download the Beta
+
+---
+
+## Footer
+
+### Tagline
+Still — Music Made for Your Practice
+
+### Links
+- Privacy Policy
+- Terms of Service
+- Contact
+- Press
+
+### Copyright
+© 2025 Still. All rights reserved.
+
+---
+
+## Meta Copy (for App Store / SEO)
+
+### App Store Subtitle
+AI-Generated Meditation Music
+
+### App Store Description (Short)
+Create personalized meditation music with AI. Describe the mood you want, choose a style, and generate unique soundscapes for your practice. Includes timed sessions, progress tracking, and a curated library.
+
+### App Store Keywords
+meditation music, AI meditation, meditation generator, personalized meditation, ambient sounds, relaxation music, mindfulness app, breathing exercises, sleep sounds, calm music
+
+### Meta Description (Website)
+Still is an iOS app that lets you create personalized meditation music with AI. Describe your mood, choose a style, and generate unique soundscapes. Public beta now available.
+
+---
+
+*Last updated: December 2025*
+
