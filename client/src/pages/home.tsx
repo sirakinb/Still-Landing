@@ -85,13 +85,13 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-orange-50/50 rounded-full blur-3xl -z-10 dark:bg-orange-900/10"></div>
 
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-4 items-center">
             
             <motion.div 
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="flex flex-col gap-6 lg:gap-8 lg:pr-12"
+              className="flex flex-col gap-6 lg:gap-8"
             >
               <motion.div variants={fadeIn}>
                 <Badge variant="outline" className="rounded-full px-4 py-1 border-primary/20 bg-primary/5 text-primary">
@@ -105,7 +105,7 @@ export default function Home() {
                 <span className="italic text-foreground/80">Your Music.</span>
               </motion.h1>
               
-              <motion.p variants={fadeIn} className="text-lg lg:text-xl text-muted-foreground max-w-xl leading-relaxed">
+              <motion.p variants={fadeIn} className="text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
                 Still lets you create personalized meditation music with AI. Describe the mood you want, choose a style, and generate a unique soundscape made just for you.
               </motion.p>
               
@@ -131,7 +131,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative mx-auto lg:mr-0 w-full max-w-[320px] lg:max-w-[400px]"
+              className="relative mx-auto lg:ml-12 w-full max-w-[320px] lg:max-w-[400px]"
             >
                {/* Phone Frame Mockup - Image already contains frame */}
                <div className="relative z-10 drop-shadow-2xl">
