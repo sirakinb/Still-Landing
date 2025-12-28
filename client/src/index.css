@@ -58,8 +58,8 @@
 
 :root {
   /* Warm, organic, minimalist palette */
-  /* Background: Soft Cream/Off-white */
-  --background: 40 20% 97%;
+  /* Background: Soft Cream/Off-white - Swapped with backdrop color */
+  --background: 42 31% 94%;
   /* Foreground: Deep Navy */
   --foreground: 222 47% 15%;
 
