@@ -85,7 +85,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-orange-50/50 rounded-full blur-3xl -z-10 dark:bg-orange-900/10"></div>
 
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-4 items-center">
+          <div className="grid lg:grid-cols-[1fr_1fr] gap-8 lg:gap-8 items-center">
             
             <motion.div 
               initial="hidden"
@@ -131,15 +131,18 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative mx-auto lg:ml-12 w-full max-w-[420px] lg:max-w-[600px]"
+              className="relative mx-auto lg:ml-auto w-full max-w-[500px] lg:max-w-[800px]"
             >
-               {/* Phone Frame Mockup - Image already contains frame */}
-               <div className="relative z-10 drop-shadow-2xl">
-                 <img 
-                   src={heroImage}
-                   alt="Still App Interface" 
-                   className="w-full h-auto"
-                 />
+               {/* Backdrop Container */}
+               <div className="relative z-10 bg-white/80 dark:bg-card/80 backdrop-blur-xl rounded-[2.5rem] p-8 lg:p-14 shadow-2xl border border-white/20">
+                 {/* Phone Frame Mockup - Image already contains frame */}
+                 <div className="relative drop-shadow-xl">
+                   <img 
+                     src={heroImage}
+                     alt="Still App Interface" 
+                     className="w-full h-auto"
+                   />
+                 </div>
                </div>
                
                {/* Decorative Circles behind phone */}
