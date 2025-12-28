@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
-import heroImage from "@assets/main-screen-1_1766958112828.png";
+import heroImage from "@assets/Red_and_White_Illustrative_Modern_Seafood_Restaurant_Facebook__1766958500433.png";
 
 // Animation variants
 const fadeIn = {
