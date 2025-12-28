@@ -131,7 +131,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative mx-auto lg:ml-12 w-full max-w-[320px] lg:max-w-[400px]"
+              className="relative mx-auto lg:ml-12 w-full max-w-[360px] lg:max-w-[480px]"
             >
                {/* Phone Frame Mockup - Image already contains frame */}
                <div className="relative z-10 drop-shadow-2xl">
