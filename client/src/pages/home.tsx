@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
+import logoImage from "@assets/STILL-APPP_1766960471016.png";
 import heroImage from "@assets/Red_and_White_Illustrative_Modern_Seafood_Restaurant_Facebook__1766958599467.png";
 
 // Animation variants
@@ -42,9 +43,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 font-serif text-2xl font-bold tracking-tight">
-             <div className="w-8 h-8 rounded-full border-2 border-primary/20 flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full bg-primary/80"></div>
-             </div>
+             <img src={logoImage} alt="Still Logo" className="w-10 h-10 object-contain" />
              Still
           </div>
 
@@ -505,7 +504,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
              <div className="flex flex-col items-center md:items-start gap-2">
                 <div className="font-serif font-bold text-xl flex items-center gap-2">
-                  <div className="w-4 h-4 rounded-full bg-primary"></div>
+                  <img src={logoImage} alt="Still Logo" className="w-6 h-6 object-contain" />
                   Still
                 </div>
                 <p className="text-muted-foreground">Music Made for Your Practice</p>
