@@ -134,7 +134,7 @@ export default function Home() {
               className="relative mx-auto lg:ml-auto w-full max-w-[500px] lg:max-w-[800px]"
             >
                {/* Backdrop Container */}
-               <div className="relative z-10 bg-white/80 dark:bg-card/80 backdrop-blur-xl rounded-[2.5rem] p-8 lg:p-14 shadow-2xl border border-white/20">
+               <div className="relative z-10 bg-[#f4f1ea]/60 dark:bg-card/80 backdrop-blur-xl rounded-[2.5rem] p-8 lg:p-14 shadow-2xl border border-white/20">
                  {/* Phone Frame Mockup - Image already contains frame */}
                  <div className="relative drop-shadow-xl">
                    <img 
