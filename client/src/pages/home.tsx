@@ -8,6 +8,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "wouter";
 import logoImage from "@assets/STILL-APPP_1766960471016.png";
 import heroImage from "@assets/Red_and_White_Illustrative_Modern_Seafood_Restaurant_Facebook__1766958599467.png";
+import libraryImage from "@assets/Red_and_White_Illustrative_Modern_Seafood_Restaurant_Facebook__1766983077536.png";
 
 // Animation variants
 const fadeIn = {
@@ -306,23 +307,20 @@ export default function Home() {
           {/* Library */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
-               <div className="aspect-square rounded-3xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 shadow-inner flex items-center justify-center overflow-hidden p-8">
-                  {/* Abstract representation of library UI */}
-                  <div className="w-full space-y-4">
-                    {[1,2,3,4].map((i) => (
-                      <div key={i} className="flex items-center gap-4 p-4 bg-background rounded-xl shadow-sm">
-                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                          <Play className="w-5 h-5 fill-current" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="h-4 w-32 bg-primary/10 rounded mb-2"></div>
-                          <div className="h-3 w-20 bg-muted rounded"></div>
-                        </div>
-                        <div className="text-xs text-muted-foreground">10:00</div>
-                      </div>
-                    ))}
-                  </div>
-               </div>
+               <motion.div 
+                 initial={{ opacity: 0, scale: 0.95 }}
+                 whileInView={{ opacity: 1, scale: 1 }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 0.5 }}
+                 className="relative max-w-[360px] mx-auto"
+               >
+                  <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-90 translate-y-4 -z-10"></div>
+                  <img 
+                    src={libraryImage} 
+                    alt="Still Library Interface" 
+                    className="w-full h-auto drop-shadow-2xl"
+                  />
+               </motion.div>
             </div>
             <div className="order-1 lg:order-2 space-y-6">
               <h2 className="font-serif text-4xl text-primary">Your Creations. Your Library.</h2>
