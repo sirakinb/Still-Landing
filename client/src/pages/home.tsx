@@ -52,7 +52,6 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection('features')} className="text-sm font-medium hover:text-primary transition-colors">Features</button>
             <button onClick={() => scrollToSection('styles')} className="text-sm font-medium hover:text-primary transition-colors">Styles</button>
-            <button onClick={() => scrollToSection('testimonials')} className="text-sm font-medium hover:text-primary transition-colors">Stories</button>
             <button onClick={() => scrollToSection('faq')} className="text-sm font-medium hover:text-primary transition-colors">FAQ</button>
             <Button size="sm" className="rounded-full px-6" onClick={() => scrollToSection('download')}>
               Join Beta
@@ -70,7 +69,6 @@ export default function Home() {
           <div className="md:hidden absolute top-16 left-0 right-0 bg-background border-b border-border/40 p-4 flex flex-col gap-4 shadow-lg animate-in slide-in-from-top-5">
             <button onClick={() => scrollToSection('features')} className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Features</button>
             <button onClick={() => scrollToSection('styles')} className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Styles</button>
-            <button onClick={() => scrollToSection('testimonials')} className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Stories</button>
             <Button className="w-full rounded-full" onClick={() => scrollToSection('download')}>
               Join Beta
             </Button>
@@ -409,46 +407,6 @@ export default function Home() {
          </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials" className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl mb-4 text-primary">What Beta Users Are Saying</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "I described 'a warm sunrise over quiet water' and the track it created was exactly what I needed. I've used it every morning since.",
-                author: "Beta User"
-              },
-              {
-                quote: "Other apps give you 10 nature tracks and call it a library. Still lets me create something new whenever I want.",
-                author: "Beta User"
-              },
-              {
-                quote: "The Tibetan style is incredible. I've generated five different tracks and each one feels completely unique.",
-                author: "Beta User"
-              }
-            ].map((testimonial, i) => (
-              <Card key={i} className="border-none shadow-sm bg-secondary/20">
-                <CardContent className="p-8 flex flex-col h-full justify-between gap-6">
-                  <div className="text-primary/40">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
-                    </svg>
-                  </div>
-                  <p className="text-lg font-medium leading-relaxed italic text-foreground/80">"{testimonial.quote}"</p>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-xs font-bold">BU</div>
-                    {testimonial.author}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <section id="faq" className="py-24 max-w-3xl mx-auto px-6">
