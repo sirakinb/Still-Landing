@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Link } from "wouter";
 import logoImage from "@assets/STILL-APPP_1766960471016.png";
 import heroImage from "@assets/Red_and_White_Illustrative_Modern_Seafood_Restaurant_Facebook__1766958599467.png";
@@ -25,6 +28,35 @@ const staggerContainer = {
     }
   }
 };
+
+function JoinBetaDialog({ children }: { children: React.ReactNode }) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        {children}
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle>Join the Beta</DialogTitle>
+          <DialogDescription>
+            Enter your details to get early access to Still.
+          </DialogDescription>
+        </DialogHeader>
+        <form className="space-y-4 py-4" onSubmit={(e) => { e.preventDefault(); }}>
+          <div className="space-y-2">
+            <Label htmlFor="name">Name</Label>
+            <Input id="name" placeholder="Enter your name" />
+          </div>
+          <div className="space-y-2">
+             <Label htmlFor="email">Email</Label>
+             <Input id="email" type="email" placeholder="Enter your email" />
+          </div>
+          <Button type="submit" className="w-full" size="lg">Join Waitlist</Button>
+        </form>
+      </DialogContent>
+    </Dialog>
+  );
+}
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,9 +85,11 @@ export default function Home() {
             <button onClick={() => scrollToSection('features')} className="text-sm font-medium hover:text-primary transition-colors">Features</button>
             <button onClick={() => scrollToSection('styles')} className="text-sm font-medium hover:text-primary transition-colors">Styles</button>
             <button onClick={() => scrollToSection('faq')} className="text-sm font-medium hover:text-primary transition-colors">FAQ</button>
-            <Button size="sm" className="rounded-full px-6" onClick={() => scrollToSection('download')}>
-              Join Beta
-            </Button>
+            <JoinBetaDialog>
+              <Button size="sm" className="rounded-full px-6">
+                Join Beta
+              </Button>
+            </JoinBetaDialog>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -69,9 +103,11 @@ export default function Home() {
           <div className="md:hidden absolute top-16 left-0 right-0 bg-background border-b border-border/40 p-4 flex flex-col gap-4 shadow-lg animate-in slide-in-from-top-5">
             <button onClick={() => scrollToSection('features')} className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Features</button>
             <button onClick={() => scrollToSection('styles')} className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Styles</button>
-            <Button className="w-full rounded-full" onClick={() => scrollToSection('download')}>
-              Join Beta
-            </Button>
+            <JoinBetaDialog>
+              <Button className="w-full rounded-full">
+                Join Beta
+              </Button>
+            </JoinBetaDialog>
           </div>
         )}
       </nav>
@@ -108,9 +144,11 @@ export default function Home() {
               </motion.p>
               
               <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-                <Button size="lg" className="rounded-full px-8 h-14 text-base shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5" onClick={() => scrollToSection('download')}>
-                  Join the Beta <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <JoinBetaDialog>
+                  <Button size="lg" className="rounded-full px-8 h-14 text-base shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
+                    Join the Beta <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </JoinBetaDialog>
               </motion.div>
               
               <motion.div variants={fadeIn} className="flex items-center gap-4 text-sm text-muted-foreground pt-4">
@@ -208,7 +246,7 @@ export default function Home() {
             <Badge variant="outline" className="mb-4">How It Works</Badge>
             <h2 className="font-serif text-4xl lg:text-5xl mb-6 text-primary">AI-Generated Meditation Music</h2>
             <p className="text-muted-foreground text-lg">
-              Powered by Suno AI, Still transforms your words into original meditation tracks. No two creations are the same.
+              Still transforms your words into original meditation tracks. No two creations are the same.
             </p>
           </div>
 
@@ -415,15 +453,11 @@ export default function Home() {
           {[
             {
               q: "How does the AI music generation work?",
-              a: "You describe the mood, imagery, or feeling you want. Choose a style (Ambient, Piano, Nature, etc.) and whether you want instrumental or vocals. Still uses Suno AI to generate a completely original meditation track based on your input."
+              a: "You describe the mood, imagery, or feeling you want. Choose a style (Ambient, Piano, Nature, etc.) and whether you want instrumental or vocals. Still uses AI to generate a completely original meditation track based on your input."
             },
             {
               q: "How long does it take to generate music?",
               a: "Typically 1-2 minutes. You'll see a progress indicator while your track is being created."
-            },
-            {
-              q: "Is Still free?",
-              a: "Yes, Still is free during the public beta. We'll introduce optional premium features in the future, but core functionality will remain accessible."
             },
             {
               q: "Can I use my generated music in meditation sessions?",
@@ -431,7 +465,7 @@ export default function Home() {
             },
             {
               q: "What devices are supported?",
-              a: "Still is available for iPhone running iOS 16 or later. iPad support is coming soon."
+              a: "Still is available for iPhone running iOS 16 or later."
             }
           ].map((faq, i) => (
             <AccordionItem key={i} value={`item-${i}`}>
@@ -454,10 +488,12 @@ export default function Home() {
            <p className="text-xl text-muted-foreground max-w-xl mx-auto">
              Describe what stillness sounds like to you. We'll make it real.
            </p>
-           <Button size="lg" className="h-16 px-10 rounded-full text-lg shadow-xl hover:scale-105 transition-transform">
-             <Apple className="mr-2 w-5 h-5" /> Download the Beta
-           </Button>
-           <p className="text-sm text-muted-foreground">Available on iOS 16 and later. Free during beta.</p>
+           <JoinBetaDialog>
+             <Button size="lg" className="h-16 px-10 rounded-full text-lg shadow-xl hover:scale-105 transition-transform">
+               Join the Beta
+             </Button>
+           </JoinBetaDialog>
+           <p className="text-sm text-muted-foreground">Available on iOS 16 and later.</p>
         </div>
       </section>
 
