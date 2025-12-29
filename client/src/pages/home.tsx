@@ -305,21 +305,28 @@ export default function Home() {
         <div className="container mx-auto px-6 space-y-32">
           
           {/* Library */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
                <motion.div 
                  initial={{ opacity: 0, scale: 0.95 }}
                  whileInView={{ opacity: 1, scale: 1 }}
                  viewport={{ once: true }}
                  transition={{ duration: 0.5 }}
-                 className="relative max-w-[360px] mx-auto"
+                 className="relative w-full max-w-[500px] lg:max-w-[800px] mx-auto"
                >
-                  <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-90 translate-y-4 -z-10"></div>
-                  <img 
-                    src={libraryImage} 
-                    alt="Still Library Interface" 
-                    className="w-full h-auto drop-shadow-2xl"
-                  />
+                  {/* Backdrop Container - Same style as hero */}
+                  <div className="relative z-10 bg-[hsl(40_50%_96%)]/70 dark:bg-card/80 backdrop-blur-xl rounded-[2.5rem] p-8 lg:p-14 shadow-2xl border border-white/20">
+                     <div className="relative drop-shadow-xl">
+                       <img 
+                         src={libraryImage} 
+                         alt="Still Library Interface" 
+                         className="w-full h-auto"
+                       />
+                     </div>
+                  </div>
+                  
+                  {/* Decorative Circles behind phone */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] bg-primary/10 rounded-full blur-3xl -z-10 animate-pulse duration-[4000ms]"></div>
                </motion.div>
             </div>
             <div className="order-1 lg:order-2 space-y-6">
