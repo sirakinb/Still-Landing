@@ -315,7 +315,7 @@ export default function Home() {
               { name: "Binaural", desc: "Resonant tones", icon: <Zap /> },
               { name: "Lo-fi", desc: "Warm, relaxed", icon: <div className="w-6 h-6 border-b-2 border-current" /> },
               { name: "Classical", desc: "Serene orchestral", icon: <Music /> },
-              { name: "Custom", desc: "Your unique style", icon: <Sparkles className="text-amber-500" />, highlight: true },
+              { name: "Custom", desc: "Your unique style", icon: <Sparkles /> },
             ].map((style, i) => (
               <motion.div
                 key={i}
@@ -323,9 +323,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className={`group cursor-pointer rounded-2xl p-6 border ${style.highlight ? 'border-amber-200 bg-amber-50/50 dark:bg-amber-900/20' : 'border-border bg-card'} hover:shadow-md transition-all`}
+                className="group cursor-pointer rounded-2xl p-6 border border-border bg-card hover:shadow-md transition-all"
               >
-                <div className={`mb-4 w-10 h-10 rounded-full ${style.highlight ? 'bg-amber-100 text-amber-600' : 'bg-primary/5 text-primary'} flex items-center justify-center`}>
+                <div className="mb-4 w-10 h-10 rounded-full bg-primary/5 text-primary flex items-center justify-center">
                   {style.icon}
                 </div>
                 <h3 className="font-bold text-lg mb-1">{style.name}</h3>
