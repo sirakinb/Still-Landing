@@ -34,6 +34,7 @@ import { toast } from "sonner";
 function JoinBetaDialog({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -53,8 +54,8 @@ function JoinBetaDialog({ children }: { children: React.ReactNode }) {
       });
 
       if (response.ok) {
+        setSubmitted(true);
         toast.success("Thanks for joining! We'll be in touch soon.");
-        setOpen(false);
       } else {
         toast.error("Something went wrong. Please try again.");
       }
@@ -65,31 +66,58 @@ function JoinBetaDialog({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const handleOpenChange = (newOpen: boolean) => {
+    setOpen(newOpen);
+    if (!newOpen) {
+      // Reset state when closed so it's ready for next time (or keep it if you want persistence)
+      setTimeout(() => setSubmitted(false), 300); 
+    }
+  };
+
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle>Join the Beta</DialogTitle>
-          <DialogDescription>
-            Enter your details to get early access to Still.
-          </DialogDescription>
-        </DialogHeader>
-        <form className="space-y-4 py-4" onSubmit={handleSubmit}>
-          <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" name="name" placeholder="Enter your name" required disabled={loading} />
+        {submitted ? (
+          <div className="py-12 text-center space-y-4">
+            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Check className="w-8 h-8" />
+            </div>
+            <DialogHeader>
+              <DialogTitle className="text-center text-2xl">You're on the list!</DialogTitle>
+              <DialogDescription className="text-center text-base">
+                Thanks for joining. We'll send an invite to your email as soon as a spot opens up.
+              </DialogDescription>
+            </DialogHeader>
+            <Button className="mt-4 rounded-full px-8" onClick={() => setOpen(false)}>
+              Done
+            </Button>
           </div>
-          <div className="space-y-2">
-             <Label htmlFor="email">Email</Label>
-             <Input id="email" name="email" type="email" placeholder="Enter your email" required disabled={loading} />
-          </div>
-          <Button type="submit" className="w-full" size="lg" disabled={loading}>
-            {loading ? "Joining..." : "Join Waitlist"}
-          </Button>
-        </form>
+        ) : (
+          <>
+            <DialogHeader>
+              <DialogTitle>Join the Beta</DialogTitle>
+              <DialogDescription>
+                Enter your details to get early access to Still.
+              </DialogDescription>
+            </DialogHeader>
+            <form className="space-y-4 py-4" onSubmit={handleSubmit}>
+              <div className="space-y-2">
+                <Label htmlFor="name">Name</Label>
+                <Input id="name" name="name" placeholder="Enter your name" required disabled={loading} />
+              </div>
+              <div className="space-y-2">
+                 <Label htmlFor="email">Email</Label>
+                 <Input id="email" name="email" type="email" placeholder="Enter your email" required disabled={loading} />
+              </div>
+              <Button type="submit" className="w-full" size="lg" disabled={loading}>
+                {loading ? "Joining..." : "Join Waitlist"}
+              </Button>
+            </form>
+          </>
+        )}
       </DialogContent>
     </Dialog>
   );
