@@ -29,9 +29,44 @@ const staggerContainer = {
   }
 };
 
+import { toast } from "sonner";
+
 function JoinBetaDialog({ children }: { children: React.ReactNode }) {
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name");
+    const email = formData.get("email");
+
+    try {
+      const response = await fetch("https://hook.us1.make.com/ji6d81v256tbw612w42t16ejnwgrxw7p", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email }),
+      });
+
+      if (response.ok) {
+        toast.success("Thanks for joining! We'll be in touch soon.");
+        setOpen(false);
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
@@ -42,16 +77,18 @@ function JoinBetaDialog({ children }: { children: React.ReactNode }) {
             Enter your details to get early access to Still.
           </DialogDescription>
         </DialogHeader>
-        <form className="space-y-4 py-4" onSubmit={(e) => { e.preventDefault(); }}>
+        <form className="space-y-4 py-4" onSubmit={handleSubmit}>
           <div className="space-y-2">
             <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="Enter your name" />
+            <Input id="name" name="name" placeholder="Enter your name" required disabled={loading} />
           </div>
           <div className="space-y-2">
              <Label htmlFor="email">Email</Label>
-             <Input id="email" type="email" placeholder="Enter your email" />
+             <Input id="email" name="email" type="email" placeholder="Enter your email" required disabled={loading} />
           </div>
-          <Button type="submit" className="w-full" size="lg">Join Waitlist</Button>
+          <Button type="submit" className="w-full" size="lg" disabled={loading}>
+            {loading ? "Joining..." : "Join Waitlist"}
+          </Button>
         </form>
       </DialogContent>
     </Dialog>
