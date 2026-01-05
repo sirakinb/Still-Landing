@@ -41,7 +41,9 @@ function JoinBetaDialog({ children }: { children: React.ReactNode }) {
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
-    const name = formData.get("name");
+    const firstName = formData.get("firstName");
+    const lastName = formData.get("lastName");
+    const name = `${firstName} ${lastName}`;
     const email = formData.get("email");
 
     try {
@@ -50,7 +52,7 @@ function JoinBetaDialog({ children }: { children: React.ReactNode }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ name, email, firstName, lastName }),
       });
 
       if (response.ok) {
@@ -104,9 +106,15 @@ function JoinBetaDialog({ children }: { children: React.ReactNode }) {
               </DialogDescription>
             </DialogHeader>
             <form className="space-y-4 py-4" onSubmit={handleSubmit}>
-              <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" name="name" placeholder="Enter your name" required disabled={loading} />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="firstName">First Name</Label>
+                  <Input id="firstName" name="firstName" placeholder="First Name" required disabled={loading} />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="lastName">Last Name</Label>
+                  <Input id="lastName" name="lastName" placeholder="Last Name" required disabled={loading} />
+                </div>
               </div>
               <div className="space-y-2">
                  <Label htmlFor="email">Email</Label>
