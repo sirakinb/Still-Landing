@@ -86,9 +86,9 @@ function JoinBetaDialog({ children }: { children: React.ReactNode }) {
               <Check className="w-8 h-8" />
             </div>
             <DialogHeader>
-              <DialogTitle className="text-center text-2xl">You're on the list!</DialogTitle>
+              <DialogTitle className="text-center text-2xl">Submission Received</DialogTitle>
               <DialogDescription className="text-center text-base">
-                Thanks for joining. We'll send an invite to your email as soon as a spot opens up.
+                Your request has been successfully submitted.
               </DialogDescription>
             </DialogHeader>
             <Button className="mt-4 rounded-full px-8" onClick={() => setOpen(false)}>
