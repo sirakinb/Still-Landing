@@ -582,13 +582,6 @@ export default function Home() {
                 <p className="text-muted-foreground">Music Made for Your Practice</p>
              </div>
              
-             <div className="flex flex-wrap justify-center gap-8 text-muted-foreground hover:text-foreground transition-colors">
-               <a href="#">Privacy Policy</a>
-               <a href="#">Terms of Service</a>
-               <a href="#">Contact</a>
-               <a href="#">Press</a>
-             </div>
-
              <div className="text-muted-foreground/60">
                © 2025 Still. All rights reserved.
              </div>
