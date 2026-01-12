@@ -213,7 +213,7 @@ export default function Home() {
               </motion.h1>
               
               <motion.p variants={fadeIn} className="text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Still lets you create personalized meditation music with AI. Describe the mood you want, choose a style, and generate a unique soundscape made just for you.
+                Still lets you create personalized meditation music. Describe the mood you want, choose a style, and generate a unique soundscape made just for you.
               </motion.p>
               
               <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
@@ -305,7 +305,7 @@ export default function Home() {
                 Every meditation app gives you the same library. The same ocean sounds. The same piano loops. But your practice is personal. Why should your music be generic?
               </p>
               <p className="text-foreground font-medium">
-                Still puts you in control. Describe what you need — a calm forest at dawn, the rhythm of gentle rain, a warm ambient hum — and watch as AI creates something completely original, just for this moment.
+                Still puts you in control. Describe what you need — a calm forest at dawn, the rhythm of gentle rain, a warm ambient hum — and create something completely original, just for this moment.
               </p>
             </motion.div>
           </div>
@@ -317,7 +317,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <Badge variant="outline" className="mb-4">How It Works</Badge>
-            <h2 className="font-serif text-4xl lg:text-5xl mb-6 text-primary">AI-Generated Meditation Music</h2>
+            <h2 className="font-serif text-4xl lg:text-5xl mb-6 text-primary">Personalized Meditation Music</h2>
             <p className="text-muted-foreground text-lg">
               Still transforms your words into original meditation tracks. No two creations are the same.
             </p>

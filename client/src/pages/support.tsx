@@ -28,8 +28,8 @@ const supportTopics = [
   },
   {
     icon: Music,
-    title: "AI Music Generation",
-    description: "Help with generating music tracks, understanding styles, saving to your library, or troubleshooting generation issues."
+    title: "Music Generation",
+    description: "Help with creating music tracks, understanding styles, saving to your library, or troubleshooting generation issues."
   },
   {
     icon: Clock,
