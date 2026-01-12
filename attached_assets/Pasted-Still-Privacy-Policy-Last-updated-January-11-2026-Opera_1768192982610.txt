@@ -1,0 +1,188 @@
+Still Privacy Policy
+
+Last updated: January 11, 2026
+
+Operated by: Pentridge Media LLC (Pennsylvania, United States)
+
+Contact: info@pentridgemedia.com
+
+1. Scope
+
+This Policy explains what we collect, how we use it, and your choices when you use Still, our website, and related services.
+
+2. What We Collect
+
+Account Data:
+
+* If you sign in with Apple: We receive your Apple ID (an anonymized identifier), email address (if you choose to share it), and display name (if provided).
+* If you use the App as a guest: We create a local, anonymous identifier for your device. No account data is collected.
+* Email address (optional, only if provided through Apple Sign In)
+
+Usage Data:
+
+* Session history (duration, start time, completion status)
+* Progress metrics (streak count, total meditation minutes)
+* App usage statistics (features used, interaction events)
+* Device/app version information
+* Basic diagnostics and error logs
+
+Content You Create:
+
+* AI-generated music tracks (stored locally on your device; metadata may be processed through third-party services)
+* Saved music library preferences
+* Session preferences and settings
+* Custom session configurations
+
+AI Music Generation:
+
+* Music generation prompts you submit
+* Style preferences and settings
+* Generated track metadata (title, style, creation date)
+
+Subscription Data:
+
+* User ID (when signed in)
+* Subscription status and entitlements
+* Purchase history (managed via RevenueCat)
+
+Payments:
+
+* Subscriptions and in-app purchases are processed through Apple In-App Purchase (IAP) via RevenueCat. Apple processes your payment; we receive subscription status and entitlement information through RevenueCat, not full payment details.
+
+We do not sell your personal information.
+
+3. Why We Use Your Data
+
+* Provide, operate, and improve the App and its features.
+* Manage subscriptions and in-app purchases.
+* Generate AI music tracks based on your requests.
+* Track and display your meditation progress and statistics.
+* Secure the service, prevent abuse, and troubleshoot issues.
+* Communicate with you about updates, features, and support (if you provide contact information).
+* Improve AI music generation quality and service features.
+
+4. Legal Bases (EEA/UK only)
+
+Where applicable, our legal bases include contract (to provide the App), legitimate interests (improve and secure the App), and consent (where required by law).
+
+5. Sharing & Disclosure
+
+We share data only with service providers that help us run Still:
+
+* Apple (Sign in with Apple, iCloud sync if enabled, payment processing)
+* Google Firebase (authentication, data storage)
+* RevenueCat (subscription management - user IDs and subscription status/entitlements)
+* Suno API (AI music generation - your prompts and preferences are sent to generate music tracks)
+
+We don't rent or sell your personal data. We may disclose if required by law or to protect rights, safety, and security.
+
+6. Data Storage & Location
+
+* Most of your data (session history, saved music, preferences) is stored locally on your device.
+* If you sign in with Apple, some data may be synced across your devices via iCloud (if enabled).
+* Account information and sync data are stored securely via Firebase in the United States.
+* Subscription and purchase data are stored securely via RevenueCat in the United States.
+* AI music generation requests are processed by third-party services and may be stored temporarily on their servers.
+
+7. Data Retention
+
+* Local data (sessions, saved music): Stored on your device and retained until you delete the App or clear app data.
+* Account data: Retained for as long as your account is active or as needed to provide the service.
+* Subscription data: Retained via RevenueCat for as long as your subscription is active or as needed to provide the service.
+* If you delete your account, we'll delete or anonymize personal data within a reasonable period (typically 30 days), subject to legal/backup constraints (backups may persist up to 90 days).
+* AI generation prompts and metadata: May be retained by third-party services per their policies.
+
+8. Security
+
+We use administrative, technical, and organizational measures to protect your data, including:
+
+* Encrypted data transmission (HTTPS)
+* Secure storage via Firebase and Apple iCloud
+* Local device encryption for on-device data
+* Authentication via Apple's secure sign-in system
+
+No system is 100% secure. You are responsible for maintaining the security of your device and account credentials.
+
+9. International Transfers
+
+We may process and store information in the United States and other countries. Where required, we use appropriate safeguards for cross-border transfers (including standard contractual clauses where applicable).
+
+10. Your Rights & Choices
+
+Access / Update / Delete:
+
+* To access, correct, export, or delete your data, email info@pentridgemedia.com.
+* You can delete your account through the App settings (if signed in).
+* Local data can be deleted by uninstalling the App or clearing app data in your device settings.
+
+Data Portability:
+
+* Session history and saved music metadata can be exported (contact us for assistance).
+
+EEA/UK:
+
+* You may have rights to object/restrict processing and to lodge a complaint with your local authority (e.g., ICO in the UK).
+
+California (CCPA/CPRA):
+
+* You have rights to know, delete, and correct personal information.
+* We do not "sell" personal information as defined by CCPA.
+
+11. Children's Privacy
+
+The App is not intended for children under 13. If we learn we collected data from a child without proper consent, we will delete it.
+
+12. App Permissions (iOS examples)
+
+Camera (Optional):
+
+* Not currently used. If added in the future, would be for profile photos or related features.
+
+Photos (Optional):
+
+* Not currently used. If added in the future, would be for saving or sharing content.
+
+Notifications (Optional):
+
+* For reminders, session updates, or feature announcements.
+* You can disable notifications in device settings (some features may not work without them).
+
+Microphone (Not Used):
+
+* Still does not access your microphone.
+
+13. Third-Party Services
+
+The App integrates with:
+
+* Apple Services (Sign in with Apple, iCloud, App Store, In-App Purchases)
+* Google Firebase (authentication, cloud storage)
+* RevenueCat (subscription and purchase management)
+* Suno API (AI music generation)
+
+Your use of these services is subject to their respective privacy policies:
+
+* Apple: https://www.apple.com/privacy/
+* Google: https://policies.google.com/privacy
+* RevenueCat: https://www.revenuecat.com/privacy
+* Suno: Please review Suno's privacy policy at their website
+
+14. AI Music Generation
+
+* When you request AI-generated music, your prompts and preferences are sent to third-party AI services (Suno API) to generate music tracks.
+* These services may store your prompts temporarily for processing.
+* Generated music tracks are stored locally on your device.
+* We may use anonymized usage data to improve the music generation experience.
+
+15. Changes to this Policy
+
+We may update this Policy. Material changes will be posted in-app or on our website with an updated "Last updated" date.
+
+16. Contact
+
+Privacy questions or requests:
+
+Email: info@pentridgemedia.com
+Address: 1034 S. 53rd Street, Philadelphia, PA 19143
+
+Last updated: January 11, 2026

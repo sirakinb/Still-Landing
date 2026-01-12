@@ -116,9 +116,16 @@ export default function Privacy() {
                   <li>Generated track metadata (title, style, creation date)</li>
                 </ul>
 
+                <h3 className="font-semibold text-stone-800 mb-2">Subscription Data:</h3>
+                <ul className="list-disc pl-6 text-stone-600 space-y-2 mb-4">
+                  <li>User ID (when signed in)</li>
+                  <li>Subscription status and entitlements</li>
+                  <li>Purchase history (managed via RevenueCat)</li>
+                </ul>
+
                 <h3 className="font-semibold text-stone-800 mb-2">Payments:</h3>
                 <p className="text-stone-600 mb-4">
-                  If we offer subscriptions in the future, payments will be processed through Apple In-App Purchase (IAP). Apple processes your payment; we receive subscription status, not full payment details.
+                  Subscriptions and in-app purchases are processed through Apple In-App Purchase (IAP) via RevenueCat. Apple processes your payment; we receive subscription status and entitlement information through RevenueCat, not full payment details.
                 </p>
 
                 <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
@@ -130,6 +137,7 @@ export default function Privacy() {
                 <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">3. Why We Use Your Data</h2>
                 <ul className="list-disc pl-6 text-stone-600 space-y-2">
                   <li>Provide, operate, and improve the App and its features.</li>
+                  <li>Manage subscriptions and in-app purchases.</li>
                   <li>Generate AI music tracks based on your requests.</li>
                   <li>Track and display your meditation progress and statistics.</li>
                   <li>Secure the service, prevent abuse, and troubleshoot issues.</li>
@@ -149,8 +157,9 @@ export default function Privacy() {
                 <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">5. Sharing & Disclosure</h2>
                 <p className="text-stone-600 mb-4">We share data only with service providers that help us run Still:</p>
                 <ul className="list-disc pl-6 text-stone-600 space-y-2 mb-4">
-                  <li>Apple (Sign in with Apple, iCloud sync if enabled, subscription status if applicable)</li>
-                  <li>Google Firebase (authentication, data storage, analytics)</li>
+                  <li>Apple (Sign in with Apple, iCloud sync if enabled, payment processing)</li>
+                  <li>Google Firebase (authentication, data storage)</li>
+                  <li>RevenueCat (subscription management - user IDs and subscription status/entitlements)</li>
                   <li>Suno API (AI music generation - your prompts and preferences are sent to generate music tracks)</li>
                 </ul>
                 <p className="text-stone-600">
@@ -164,6 +173,7 @@ export default function Privacy() {
                   <li>Most of your data (session history, saved music, preferences) is stored locally on your device.</li>
                   <li>If you sign in with Apple, some data may be synced across your devices via iCloud (if enabled).</li>
                   <li>Account information and sync data are stored securely via Firebase in the United States.</li>
+                  <li>Subscription and purchase data are stored securely via RevenueCat in the United States.</li>
                   <li>AI music generation requests are processed by third-party services and may be stored temporarily on their servers.</li>
                 </ul>
               </section>
@@ -173,6 +183,7 @@ export default function Privacy() {
                 <ul className="list-disc pl-6 text-stone-600 space-y-2">
                   <li>Local data (sessions, saved music): Stored on your device and retained until you delete the App or clear app data.</li>
                   <li>Account data: Retained for as long as your account is active or as needed to provide the service.</li>
+                  <li>Subscription data: Retained via RevenueCat for as long as your subscription is active or as needed to provide the service.</li>
                   <li>If you delete your account, we'll delete or anonymize personal data within a reasonable period (typically 30 days), subject to legal/backup constraints (backups may persist up to 90 days).</li>
                   <li>AI generation prompts and metadata: May be retained by third-party services per their policies.</li>
                 </ul>
@@ -231,7 +242,7 @@ export default function Privacy() {
               <section className="mb-10">
                 <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">11. Children's Privacy</h2>
                 <p className="text-stone-600">
-                  The App is rated 4+ globally (with regional variations: 9+ in 173 countries/regions, 10+ in Brazil, ALL in Korea). We do not knowingly collect personal information from children without parental consent where required by law. If we learn we collected data from a child without proper consent, we will delete it. Parents or guardians who believe their child has provided us with personal information without consent should contact us at info@pentridgemedia.com.
+                  The App is not intended for children under 13. If we learn we collected data from a child without proper consent, we will delete it.
                 </p>
               </section>
 
@@ -264,13 +275,15 @@ export default function Privacy() {
                 <p className="text-stone-600 mb-4">The App integrates with:</p>
                 <ul className="list-disc pl-6 text-stone-600 space-y-2 mb-4">
                   <li>Apple Services (Sign in with Apple, iCloud, App Store, In-App Purchases)</li>
-                  <li>Google Firebase (authentication, cloud storage, analytics)</li>
+                  <li>Google Firebase (authentication, cloud storage)</li>
+                  <li>RevenueCat (subscription and purchase management)</li>
                   <li>Suno API (AI music generation)</li>
                 </ul>
                 <p className="text-stone-600 mb-4">Your use of these services is subject to their respective privacy policies:</p>
                 <ul className="list-disc pl-6 text-stone-600 space-y-2">
                   <li>Apple: <a href="https://www.apple.com/privacy/" className="text-stone-800 underline hover:text-stone-600">https://www.apple.com/privacy/</a></li>
                   <li>Google: <a href="https://policies.google.com/privacy" className="text-stone-800 underline hover:text-stone-600">https://policies.google.com/privacy</a></li>
+                  <li>RevenueCat: <a href="https://www.revenuecat.com/privacy" className="text-stone-800 underline hover:text-stone-600">https://www.revenuecat.com/privacy</a></li>
                   <li>Suno: Please review Suno's privacy policy at their website</li>
                 </ul>
               </section>
