@@ -1,0 +1,196 @@
+Still Terms of Service
+
+Last Updated: January 11, 2026
+
+Operated by: Pentridge Media LLC (Pennsylvania, United States)
+
+Contact: info@pentridgemedia.com
+
+1. Overview
+
+* Still (the "App") is a meditation and mindfulness application that helps you find stillness through guided sessions, AI-generated music, and progress tracking.
+* The App is provided by Pentridge Media LLC ("Still," "we," "us," or "our").
+* By downloading or using the App, you agree to these Terms.
+
+2. Eligibility
+
+You must be at least 13 years old (or the age of digital consent in your region) to use the App.
+
+3. Accounts & Security
+
+* You may sign in with Apple or use the App as a guest. You are responsible for safeguarding your account credentials.
+* You agree that your account information is accurate and you won't impersonate others or use the App for unlawful purposes.
+* We may suspend or terminate accounts that violate these Terms.
+
+4. Features & Services
+
+The App offers:
+* Curated meditation sessions and soundscapes
+* AI-powered music generation (created via third-party services)
+* Timed meditation sessions with flexible durations
+* Progress tracking (streaks, total minutes, session history)
+* Personal library for saved music tracks
+
+We may add, modify, or remove features with notice where practical.
+
+5. Subscriptions, Billing & Refunds
+
+If we offer paid subscriptions or in-app purchases in the future:
+
+* Payments will be processed through Apple In-App Purchase (IAP).
+* Your Apple ID will be charged at confirmation.
+* Subscriptions auto-renew unless canceled at least 24 hours before the end of the current period.
+* Renewal charges occur within 24 hours before the current period ends.
+* Manage or cancel subscriptions under: Settings → [your name] → Subscriptions on your device.
+* Refunds for Apple IAP are governed by Apple's policies and must be requested directly from Apple.
+
+We may offer free trials, which convert to paid unless you cancel before the trial ends.
+
+6. Acceptable Use
+
+You agree not to:
+
+* Use the App for any unlawful purpose or in violation of applicable laws.
+* Attempt to reverse-engineer, decompile, or extract the App's source code.
+* Interfere with or disrupt the App's services or servers.
+* Use AI music generation features to create content that infringes on intellectual property rights, is illegal, harmful, or violates any laws.
+* Attempt to abuse or exploit the AI music generation service or any other features.
+
+We may remove content or restrict accounts that violate these rules.
+
+7. Your Content & License
+
+Ownership:
+
+You retain ownership of content you create or generate using the App, including AI-generated music tracks, session notes, and preferences ("User Content").
+
+License to Us:
+
+You grant us a non-exclusive, worldwide license to host, store, reproduce, and display your User Content solely to provide and improve the App.
+
+You represent that you have the rights to your content and that it doesn't violate third-party rights.
+
+8. AI-Generated Music
+
+* The App uses third-party AI services (including Suno API) to generate music based on your prompts.
+* AI-generated content is provided "as is" without warranty. Results may vary and may contain similarities to existing compositions.
+* We do not guarantee the uniqueness, quality, or suitability of AI-generated content for your intended use.
+* You are responsible for ensuring your prompts and generated content comply with all applicable laws.
+* We reserve the right to remove or restrict access to content that violates these Terms or applicable law.
+
+9. Our Intellectual Property
+
+The App, including its software, features, branding, logos, and other materials, is owned by Pentridge Media LLC and protected by law. Except for your User Content and rights expressly granted, no licenses are granted.
+
+10. Third-Party Services
+
+We integrate services such as:
+* Apple Services (Sign in with Apple, iCloud)
+* Google Firebase (authentication, data storage)
+* Suno API (AI music generation)
+
+Your use of those services may be subject to their own terms and privacy policies.
+
+11. Wellness & Medical Disclaimer
+
+THE APP IS PROVIDED FOR GENERAL WELLNESS AND RELAXATION PURPOSES ONLY. IT IS NOT INTENDED FOR USE IN THE DIAGNOSIS, TREATMENT, CURE, OR PREVENTION OF ANY DISEASE OR MEDICAL CONDITION.
+
+* If you have a medical or mental health condition, please consult with a qualified healthcare provider before using the App.
+* Do not use the App as a substitute for professional medical advice, diagnosis, or treatment.
+* The App is not a medical device and does not provide medical services.
+
+12. Beta & AI Features
+
+* Some features (including AI music generation) may be labeled as beta and could change, be rate-limited, or discontinued.
+* Results from AI features may be imperfect; use discretion.
+* We may modify, suspend, or discontinue features with notice where practical.
+
+13. Availability; Changes
+
+* We may modify, suspend, or discontinue features or services with notice where practical.
+* We are not liable for outages, data loss, or changes to the App.
+
+14. Disclaimer; Limitation of Liability
+
+The App is provided "as is" and "as available." To the fullest extent permitted by law, we disclaim all warranties and limit our total liability to the greater of:
+
+* (a) $50, or
+* (b) the amount you paid to us for the App in the 12 months before the claim.
+
+Some jurisdictions do not allow certain limitations; in those cases, the limits apply to the maximum extent permitted.
+
+15. Indemnity
+
+You agree to defend, indemnify, and hold harmless Pentridge Media LLC from any claims, damages, or expenses arising from your misuse of the App or violation of these Terms.
+
+16. Governing Law; Venue
+
+* These Terms are governed by the laws of the Commonwealth of Pennsylvania, USA, without regard to conflict of law principles.
+* Where permitted, exclusive venue for disputes is in the courts located in Philadelphia, Pennsylvania, United States.
+
+17. Changes to Terms
+
+* We may update these Terms at any time.
+* Material changes will be posted in the App or on our website.
+* Continued use means you accept the updated Terms.
+
+18. Contact
+
+Questions about these Terms:
+
+* Email: info@pentridgemedia.com
+* Address: 1034 S. 53rd Street, Philadelphia, PA 19143
+
+19. Apple App Store Additional Terms (EULA)
+
+If you download or access Still through the Apple App Store, the following additional terms apply:
+
+Acknowledgment
+
+You and Pentridge Media LLC acknowledge that this agreement is between you and Pentridge Media LLC only, not with Apple. Pentridge Media LLC, not Apple, is solely responsible for the Still App and its content.
+
+Scope of License
+
+The license granted to you for Still is a limited, non-transferable license to use the App on any Apple-branded device you own or control and as permitted by the Usage Rules in the Apple Media Services Terms and Conditions. The App may also be accessed and used by other accounts associated with you via Family Sharing or volume purchasing.
+
+Maintenance and Support
+
+Pentridge Media LLC is solely responsible for providing maintenance and support for the App, as specified in these Terms or as required by applicable law. Apple has no obligation whatsoever to furnish any maintenance or support services for the App.
+
+Warranty
+
+To the maximum extent permitted by law, the App is provided "as is." If the App fails to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price (if any). To the extent permitted by law, Apple has no other warranty obligation, and any other claims, losses, liabilities, or expenses attributable to any failure to conform are the sole responsibility of Pentridge Media LLC.
+
+Product Claims
+
+You acknowledge that Pentridge Media LLC, not Apple, is responsible for addressing any claims by you or a third party relating to the App or your possession or use of the App, including but not limited to:
+
+* (i) product liability claims;
+* (ii) any claim that the App fails to conform to legal or regulatory requirements; and
+* (iii) claims arising under consumer protection or similar laws.
+
+Intellectual Property Rights
+
+In the event of any third-party claim that the App or your use of it infringes that third party's intellectual property rights, Pentridge Media LLC will be solely responsible for the investigation, defense, settlement, and discharge of such claim.
+
+Legal Compliance
+
+You represent and warrant that (i) you are not located in a country that is subject to a U.S. Government embargo or designated as a "terrorist supporting" country; and (ii) you are not listed on any U.S. Government list of prohibited or restricted parties.
+
+Developer Contact Information
+
+Pentridge Media LLC
+1034 S. 53rd Street
+Philadelphia, PA 19143
+Email: info@pentridgemedia.com
+Phone: (267) 463-6527
+
+Third-Party Terms
+
+You must comply with applicable third-party terms when using the App (for example, your wireless data service agreement).
+
+Third-Party Beneficiary
+
+You and Pentridge Media LLC acknowledge and agree that Apple and its subsidiaries are third-party beneficiaries of these Terms, and that, upon your acceptance of the Terms, Apple will have the right (and be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary.
+
+Last Updated: January 11, 2026
