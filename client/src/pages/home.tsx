@@ -582,9 +582,14 @@ export default function Home() {
                 <p className="text-muted-foreground">Music Made for Your Practice</p>
              </div>
              
-             <div className="text-muted-foreground/60">
-               © 2025 Still. All rights reserved.
+             <div className="flex items-center gap-6 text-muted-foreground">
+               <Link href="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link>
+               <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+               <Link href="/support" className="hover:text-foreground transition-colors">Support</Link>
              </div>
+          </div>
+          <div className="mt-8 pt-6 border-t border-border/30 text-center text-muted-foreground/60">
+            © 2026 Pentridge Media LLC. All rights reserved.
           </div>
         </div>
       </footer>
