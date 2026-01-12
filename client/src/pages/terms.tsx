@@ -87,7 +87,7 @@ export default function Terms() {
               <section className="mb-10">
                 <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">2. Eligibility</h2>
                 <p className="text-stone-600">
-                  You must be at least 13 years old (or the age of digital consent in your region) to use the App.
+                  The App is rated 4+ globally (with regional variations: 9+ in 173 countries/regions, 10+ in Brazil, ALL in Korea). Children under the applicable age rating in their region should use the App under parental supervision. By using the App, you confirm you meet the age requirements for your region or have parental consent.
                 </p>
               </section>
 

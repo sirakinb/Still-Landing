@@ -231,7 +231,7 @@ export default function Privacy() {
               <section className="mb-10">
                 <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">11. Children's Privacy</h2>
                 <p className="text-stone-600">
-                  The App is not intended for children under 13. If we learn we collected data from a child without proper consent, we will delete it.
+                  The App is rated 4+ globally (with regional variations: 9+ in 173 countries/regions, 10+ in Brazil, ALL in Korea). We do not knowingly collect personal information from children without parental consent where required by law. If we learn we collected data from a child without proper consent, we will delete it. Parents or guardians who believe their child has provided us with personal information without consent should contact us at info@pentridgemedia.com.
                 </p>
               </section>
 
