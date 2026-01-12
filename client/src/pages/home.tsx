@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link } from "wouter";
 import logoImage from "@assets/STILL-APPP_1766960471016.png";
-import heroImage from "@assets/Red_and_White_Illustrative_Modern_Seafood_Restaurant_Facebook__1766958599467.png";
+import heroImage from "@assets/2_1768204705251.png";
 import libraryImage from "@assets/Red_and_White_Illustrative_Modern_Seafood_Restaurant_Facebook__1766983077536.png";
 
 // Animation variants
