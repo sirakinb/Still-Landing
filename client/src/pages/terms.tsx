@@ -115,16 +115,21 @@ export default function Terms() {
 
               <section className="mb-10">
                 <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">5. Subscriptions, Billing & Refunds</h2>
-                <p className="text-stone-600 mb-4">If we offer paid subscriptions or in-app purchases in the future:</p>
+                <p className="text-stone-600 mb-4">Still offers paid subscriptions to access all features:</p>
+                <ul className="list-disc pl-6 text-stone-600 space-y-2 mb-4">
+                  <li>Monthly: $7.99/month</li>
+                  <li>Annual: $69.99/year</li>
+                </ul>
+                
+                <h3 className="font-semibold text-stone-800 mb-2">Subscription Terms:</h3>
                 <ul className="list-disc pl-6 text-stone-600 space-y-2">
-                  <li>Payments will be processed through Apple In-App Purchase (IAP).</li>
+                  <li>Payments are processed through Apple In-App Purchase (IAP).</li>
                   <li>Your Apple ID will be charged at confirmation.</li>
                   <li>Subscriptions auto-renew unless canceled at least 24 hours before the end of the current period.</li>
                   <li>Renewal charges occur within 24 hours before the current period ends.</li>
                   <li>Manage or cancel subscriptions under: Settings → [your name] → Subscriptions on your device.</li>
                   <li>Refunds for Apple IAP are governed by Apple's policies and must be requested directly from Apple.</li>
                 </ul>
-                <p className="text-stone-600 mt-4">We may offer free trials, which convert to paid unless you cancel before the trial ends.</p>
               </section>
 
               <section className="mb-10">
