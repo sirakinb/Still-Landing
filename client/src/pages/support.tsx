@@ -69,8 +69,8 @@ export default function Support() {
             </Link>
             
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/terms" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Terms</Link>
-              <Link href="/privacy" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Privacy</Link>
+              <a href="#/terms" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Terms</a>
+              <a href="#/privacy" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Privacy</a>
             </nav>
 
             <button
@@ -89,8 +89,8 @@ export default function Support() {
             className="md:hidden bg-white border-b border-stone-200"
           >
             <div className="px-4 py-4 space-y-3">
-              <Link href="/terms" className="block text-stone-600 hover:text-stone-900">Terms</Link>
-              <Link href="/privacy" className="block text-stone-600 hover:text-stone-900">Privacy</Link>
+              <a href="#/terms" className="block text-stone-600 hover:text-stone-900">Terms</a>
+              <a href="#/privacy" className="block text-stone-600 hover:text-stone-900">Privacy</a>
             </div>
           </motion.div>
         )}
@@ -103,10 +103,10 @@ export default function Support() {
             animate="visible"
             variants={fadeIn}
           >
-            <Link href="/" className="inline-flex items-center text-stone-500 hover:text-stone-700 mb-8 transition-colors">
+            <a href="/" className="inline-flex items-center text-stone-500 hover:text-stone-700 mb-8 transition-colors">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
-            </Link>
+            </a>
             
             <h1 className="font-serif text-4xl md:text-5xl font-semibold text-stone-900 mb-4">
               Help & Support
@@ -176,13 +176,13 @@ export default function Support() {
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-6">Quick Links</h2>
               <div className="flex items-center space-x-4 text-stone-600">
-                <Link href="/terms" className="hover:text-stone-900 transition-colors underline" data-testid="link-terms">
+                <a href="#/terms" className="hover:text-stone-900 transition-colors underline" data-testid="link-terms">
                   Terms of Service
-                </Link>
+                </a>
                 <span className="text-stone-300">•</span>
-                <Link href="/privacy" className="hover:text-stone-900 transition-colors underline" data-testid="link-privacy">
+                <a href="#/privacy" className="hover:text-stone-900 transition-colors underline" data-testid="link-privacy">
                   Privacy Policy
-                </Link>
+                </a>
               </div>
             </section>
           </motion.div>
@@ -197,9 +197,9 @@ export default function Support() {
               <span className="font-serif text-lg font-semibold">Still</span>
             </div>
             <div className="flex items-center space-x-6 text-sm text-stone-400">
-              <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-              <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/support" className="hover:text-white transition-colors">Support</Link>
+              <a href="#/terms" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="#/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#/support" className="hover:text-white transition-colors">Support</a>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-stone-800 text-center text-stone-500 text-sm">

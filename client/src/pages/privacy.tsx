@@ -25,8 +25,8 @@ export default function Privacy() {
             </Link>
             
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/support" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Support</Link>
-              <Link href="/terms" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Terms</Link>
+              <a href="#/support" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Support</a>
+              <a href="#/terms" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Terms</a>
             </nav>
 
             <button
@@ -45,8 +45,8 @@ export default function Privacy() {
             className="md:hidden bg-white border-b border-stone-200"
           >
             <div className="px-4 py-4 space-y-3">
-              <Link href="/support" className="block text-stone-600 hover:text-stone-900">Support</Link>
-              <Link href="/terms" className="block text-stone-600 hover:text-stone-900">Terms</Link>
+              <a href="#/support" className="block text-stone-600 hover:text-stone-900">Support</a>
+              <a href="#/terms" className="block text-stone-600 hover:text-stone-900">Terms</a>
             </div>
           </motion.div>
         )}
@@ -59,10 +59,10 @@ export default function Privacy() {
             animate="visible"
             variants={fadeIn}
           >
-            <Link href="/" className="inline-flex items-center text-stone-500 hover:text-stone-700 mb-8 transition-colors">
+            <a href="/" className="inline-flex items-center text-stone-500 hover:text-stone-700 mb-8 transition-colors">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
-            </Link>
+            </a>
             
             <h1 className="font-serif text-4xl md:text-5xl font-semibold text-stone-900 mb-4">
               Privacy Policy
@@ -330,9 +330,9 @@ export default function Privacy() {
               <span className="font-serif text-lg font-semibold">Still</span>
             </div>
             <div className="flex items-center space-x-6 text-sm text-stone-400">
-              <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-              <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/support" className="hover:text-white transition-colors">Support</Link>
+              <a href="#/terms" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="#/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#/support" className="hover:text-white transition-colors">Support</a>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-stone-800 text-center text-stone-500 text-sm">
