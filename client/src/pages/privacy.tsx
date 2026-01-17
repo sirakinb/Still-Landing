@@ -67,7 +67,7 @@ export default function Privacy() {
             <h1 className="font-serif text-4xl md:text-5xl font-semibold text-stone-900 mb-4">
               Privacy Policy
             </h1>
-            <p className="text-stone-500 mb-12">Last updated: January 11, 2026</p>
+            <p className="text-stone-500 mb-12">Last updated: January 16, 2026</p>
 
             <div className="prose prose-stone prose-lg max-w-none">
               <p className="text-stone-600 mb-8">
@@ -315,7 +315,7 @@ export default function Privacy() {
               </section>
 
               <div className="border-t border-stone-200 pt-8 mt-12">
-                <p className="text-stone-500 text-sm">Last updated: January 11, 2026</p>
+                <p className="text-stone-500 text-sm">Last updated: January 16, 2026</p>
               </div>
             </div>
           </motion.div>
