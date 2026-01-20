@@ -158,11 +158,9 @@ export default function Home() {
             <button onClick={() => scrollToSection('features')} className="text-sm font-medium hover:text-primary transition-colors">Features</button>
             <button onClick={() => scrollToSection('styles')} className="text-sm font-medium hover:text-primary transition-colors">Styles</button>
             <button onClick={() => scrollToSection('faq')} className="text-sm font-medium hover:text-primary transition-colors">FAQ</button>
-            <JoinBetaDialog>
-              <Button size="sm" className="rounded-full px-6">
-                Join Beta
-              </Button>
-            </JoinBetaDialog>
+            <a href="https://apps.apple.com/us/app/still-meditation/id6757083149" target="_blank" rel="noopener noreferrer">
+              <img src="/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" className="h-10 w-auto" />
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -176,11 +174,9 @@ export default function Home() {
           <div className="md:hidden absolute top-16 left-0 right-0 bg-background border-b border-border/40 p-4 flex flex-col gap-4 shadow-lg animate-in slide-in-from-top-5">
             <button onClick={() => scrollToSection('features')} className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Features</button>
             <button onClick={() => scrollToSection('styles')} className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Styles</button>
-            <JoinBetaDialog>
-              <Button className="w-full rounded-full">
-                Join Beta
-              </Button>
-            </JoinBetaDialog>
+            <a href="https://apps.apple.com/us/app/still-meditation/id6757083149" target="_blank" rel="noopener noreferrer" className="w-full">
+              <img src="/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" className="h-10 w-auto mx-auto" />
+            </a>
           </div>
         )}
       </nav>
@@ -203,7 +199,7 @@ export default function Home() {
               <motion.div variants={fadeIn}>
                 <Badge variant="outline" className="rounded-full px-4 py-1 border-primary/20 bg-primary/5 text-primary">
                   <span className="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-                  Public Beta is Live
+                  Now Live
                 </Badge>
               </motion.div>
               
@@ -217,11 +213,9 @@ export default function Home() {
               </motion.p>
               
               <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-                <JoinBetaDialog>
-                  <Button size="lg" className="rounded-full px-8 h-14 text-base shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
-                    Join the Beta <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </JoinBetaDialog>
+                <a href="https://apps.apple.com/us/app/still-meditation/id6757083149" target="_blank" rel="noopener noreferrer">
+                  <img src="/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" className="h-14 w-auto" />
+                </a>
               </motion.div>
               
               <motion.div variants={fadeIn} className="flex items-center gap-4 text-sm text-muted-foreground pt-4">
@@ -561,11 +555,9 @@ export default function Home() {
            <p className="text-xl text-muted-foreground max-w-xl mx-auto">
              Describe what stillness sounds like to you. We'll make it real.
            </p>
-           <JoinBetaDialog>
-             <Button size="lg" className="h-16 px-10 rounded-full text-lg shadow-xl hover:scale-105 transition-transform">
-               Join the Beta
-             </Button>
-           </JoinBetaDialog>
+           <a href="https://apps.apple.com/us/app/still-meditation/id6757083149" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-105">
+             <img src="/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" className="h-16 w-auto" />
+           </a>
            <p className="text-sm text-muted-foreground">Available on iOS 16 and later.</p>
         </div>
       </section>
