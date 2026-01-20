@@ -179,19 +179,19 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-14 pb-20 lg:pt-20 lg:pb-32 overflow-hidden">
+      <section className="relative pt-20 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
         {/* Abstract Background Blobs */}
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl -z-10 dark:bg-blue-900/20"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-orange-50/50 rounded-full blur-3xl -z-10 dark:bg-orange-900/10"></div>
 
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-[1fr_1fr] gap-8 lg:gap-8 items-center">
+          <div className="grid lg:grid-cols-[1fr_1fr] gap-8 lg:gap-8 items-start">
             
             <motion.div 
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="flex flex-col gap-4 lg:gap-6"
+              className="flex flex-col gap-4 lg:gap-6 lg:mt-12"
             >
               <motion.div variants={fadeIn}>
                 <Badge variant="outline" className="rounded-full px-4 py-1 border-primary/20 bg-primary/5 text-primary">
