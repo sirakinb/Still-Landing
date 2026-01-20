@@ -158,9 +158,6 @@ export default function Home() {
             <button onClick={() => scrollToSection('features')} className="text-sm font-medium hover:text-primary transition-colors">Features</button>
             <button onClick={() => scrollToSection('styles')} className="text-sm font-medium hover:text-primary transition-colors">Styles</button>
             <button onClick={() => scrollToSection('faq')} className="text-sm font-medium hover:text-primary transition-colors">FAQ</button>
-            <a href="https://apps.apple.com/us/app/still-meditation/id6757083149" target="_blank" rel="noopener noreferrer">
-              <img src="/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" className="h-10 w-auto" />
-            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
