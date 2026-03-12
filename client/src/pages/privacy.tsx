@@ -3,6 +3,7 @@ import { ArrowLeft, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import logoImage from "@assets/STILL-APPP_1766960471016.png";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -11,6 +12,11 @@ const fadeIn = {
 
 export default function Privacy() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  usePageSEO({
+    title: "Privacy Policy | Still - Meditation Music App",
+    description: "Privacy Policy for Still, the AI-powered meditation music app. Learn how Pentridge Media LLC collects, uses, and protects your personal information."
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">

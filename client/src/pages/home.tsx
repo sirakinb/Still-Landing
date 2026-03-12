@@ -12,6 +12,7 @@ import { Link } from "wouter";
 import logoImage from "@assets/STILL-APPP_1766960471016.png";
 import heroImage from "@assets/Gold_Black_Crown_x_Crown_Logo_(1024_x_1024_px)_(1290_x_2796_px_1768204792335.png";
 import libraryImage from "@assets/Red_and_White_Illustrative_Modern_Seafood_Restaurant_Facebook__1766983077536.png";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 // Animation variants
 const fadeIn = {
@@ -134,6 +135,11 @@ function JoinBetaDialog({ children }: { children: React.ReactNode }) {
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  usePageSEO({
+    title: "Still - AI-Generated Meditation Music | Personalized Soundscapes",
+    description: "Still lets you create personalized AI-generated meditation music. Describe your mood, choose a style, and generate unique soundscapes for your meditation practice. Available on iOS."
+  });
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -178,8 +184,9 @@ export default function Home() {
         )}
       </nav>
 
+      <main>
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 lg:pt-60 lg:pb-32 overflow-hidden">
+      <section aria-label="Hero" className="relative pt-40 pb-20 lg:pt-60 lg:pb-32 overflow-hidden">
         {/* Abstract Background Blobs */}
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl -z-10 dark:bg-blue-900/20"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-orange-50/50 rounded-full blur-3xl -z-10 dark:bg-orange-900/10"></div>
@@ -254,7 +261,7 @@ export default function Home() {
       </section>
 
       {/* Value Proposition Bar */}
-      <section className="bg-primary/5 py-12 border-y border-primary/5">
+      <section aria-label="Value proposition" className="bg-primary/5 py-12 border-y border-primary/5">
         <div className="container mx-auto px-6 text-center">
           <motion.h2 
             initial="hidden"
@@ -304,7 +311,7 @@ export default function Home() {
       </section>
 
       {/* Core Features - How it works */}
-      <section id="features" className="py-24 bg-gradient-to-b from-transparent to-primary/5">
+      <section id="features" aria-label="How it works" className="py-24 bg-gradient-to-b from-transparent to-primary/5">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <Badge variant="outline" className="mb-4">How It Works</Badge>
@@ -363,7 +370,7 @@ export default function Home() {
       </section>
 
       {/* Styles Grid */}
-      <section id="styles" className="py-24">
+      <section id="styles" aria-label="Music styles" className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
              <h2 className="font-serif text-4xl lg:text-5xl mb-4 text-primary">Seven Styles. Infinite Possibilities.</h2>
@@ -511,7 +518,7 @@ export default function Home() {
 
 
       {/* FAQ */}
-      <section id="faq" className="py-24 max-w-3xl mx-auto px-6">
+      <section id="faq" aria-label="Frequently asked questions" className="py-24 max-w-3xl mx-auto px-6">
         <h2 className="font-serif text-3xl mb-8 text-center text-primary">Questions</h2>
         <Accordion type="single" collapsible className="w-full">
           {[
@@ -543,7 +550,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section id="download" className="py-32 relative overflow-hidden">
+      <section id="download" aria-label="Download the app" className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 -z-10"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white rounded-full blur-3xl -z-10 dark:bg-black/20"></div>
         
@@ -558,6 +565,7 @@ export default function Home() {
            <p className="text-sm text-muted-foreground">Available on iOS 16 and later.</p>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <footer className="py-12 border-t border-border/50 text-sm">

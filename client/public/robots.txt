@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://6ee001aa-e9ef-458e-a37c-67a454c1175c-00-2h36odzzn4hyb.spock.replit.dev/sitemap.xml

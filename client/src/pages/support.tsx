@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import logoImage from "@assets/STILL-APPP_1766960471016.png";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -55,6 +56,11 @@ const supportTopics = [
 
 export default function Support() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  usePageSEO({
+    title: "Support | Still - Meditation Music App",
+    description: "Get help with Still, the AI-powered meditation music app. Find answers about account management, music generation, sessions, and technical issues. Contact us at info@pentridgemedia.com."
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
