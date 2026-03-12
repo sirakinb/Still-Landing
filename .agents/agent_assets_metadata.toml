@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "lctaCmKDOcy1sQMIp-L7C"
+uri = "file://still-seo-90-day-plan.md"
+type = "text"
+title = "Still App — 90-Day SEO Plan"
