@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Music, Sparkles, Wind, Waves, CloudRain, Zap, Heart, Play, BarChart, Check, Apple, Menu, X } from "lucide-react";
 import { useState } from "react";
+import posthog from "posthog-js";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -48,16 +49,17 @@ function JoinBetaDialog({ children }: { children: React.ReactNode }) {
     const email = formData.get("email");
 
     try {
-      const response = await fetch("https://hook.us1.make.com/ji6d81v256tbw612w42t16ejnwgrxw7p", {
+      posthog.capture("waitlist_signup_submitted", { email });
+
+      const response = await fetch("/api/waitlist", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, firstName, lastName }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, lastName, email }),
       });
 
       if (response.ok) {
         setSubmitted(true);
+        posthog.capture("waitlist_signup_success", { email });
         toast.success("Thanks for joining! We'll be in touch soon.");
       } else {
         toast.error("Something went wrong. Please try again.");
@@ -70,6 +72,7 @@ function JoinBetaDialog({ children }: { children: React.ReactNode }) {
   };
 
   const handleOpenChange = (newOpen: boolean) => {
+    if (newOpen) posthog.capture("join_beta_cta_clicked");
     setOpen(newOpen);
     if (!newOpen) {
       // Reset state when closed so it's ready for next time (or keep it if you want persistence)
