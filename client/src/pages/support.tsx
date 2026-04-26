@@ -75,8 +75,8 @@ export default function Support() {
             </Link>
             
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#/terms" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Terms</a>
-              <a href="#/privacy" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Privacy</a>
+              <a href="/terms" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Terms</a>
+              <a href="/privacy" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Privacy</a>
             </nav>
 
             <button
@@ -95,8 +95,8 @@ export default function Support() {
             className="md:hidden bg-white border-b border-stone-200"
           >
             <div className="px-4 py-4 space-y-3">
-              <a href="#/terms" className="block text-stone-600 hover:text-stone-900">Terms</a>
-              <a href="#/privacy" className="block text-stone-600 hover:text-stone-900">Privacy</a>
+              <a href="/terms" className="block text-stone-600 hover:text-stone-900">Terms</a>
+              <a href="/privacy" className="block text-stone-600 hover:text-stone-900">Privacy</a>
             </div>
           </motion.div>
         )}
@@ -182,11 +182,11 @@ export default function Support() {
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-6">Quick Links</h2>
               <div className="flex items-center space-x-4 text-stone-600">
-                <a href="#/terms" className="hover:text-stone-900 transition-colors underline" data-testid="link-terms">
+                <a href="/terms" className="hover:text-stone-900 transition-colors underline" data-testid="link-terms">
                   Terms of Service
                 </a>
                 <span className="text-stone-300">•</span>
-                <a href="#/privacy" className="hover:text-stone-900 transition-colors underline" data-testid="link-privacy">
+                <a href="/privacy" className="hover:text-stone-900 transition-colors underline" data-testid="link-privacy">
                   Privacy Policy
                 </a>
               </div>
@@ -203,9 +203,9 @@ export default function Support() {
               <span className="font-serif text-lg font-semibold">Still</span>
             </div>
             <div className="flex items-center space-x-6 text-sm text-stone-400">
-              <a href="#/terms" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#/support" className="hover:text-white transition-colors">Support</a>
+              <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="/support" className="hover:text-white transition-colors">Support</a>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-stone-800 text-center text-stone-500 text-sm">

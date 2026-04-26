@@ -8,7 +8,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Link } from "wouter";
 import logoImage from "@assets/STILL-APPP_1766960471016.png";
 import heroImage from "@assets/Gold_Black_Crown_x_Crown_Logo_(1024_x_1024_px)_(1290_x_2796_px_1768204792335.png";
 import libraryImage from "@assets/Red_and_White_Illustrative_Modern_Seafood_Restaurant_Facebook__1766983077536.png";
@@ -164,6 +163,7 @@ export default function Home() {
             <button onClick={() => scrollToSection('features')} className="text-sm font-medium hover:text-primary transition-colors">Features</button>
             <button onClick={() => scrollToSection('styles')} className="text-sm font-medium hover:text-primary transition-colors">Styles</button>
             <button onClick={() => scrollToSection('faq')} className="text-sm font-medium hover:text-primary transition-colors">FAQ</button>
+            <a href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -177,6 +177,7 @@ export default function Home() {
           <div className="md:hidden absolute top-16 left-0 right-0 bg-background border-b border-border/40 p-4 flex flex-col gap-4 shadow-lg animate-in slide-in-from-top-5">
             <button onClick={() => scrollToSection('features')} className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Features</button>
             <button onClick={() => scrollToSection('styles')} className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Styles</button>
+            <a href="/blog" className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Blog</a>
             <a href="https://apps.apple.com/us/app/still-meditation/id6757083149" target="_blank" rel="noopener noreferrer" className="w-full">
               <img src="/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" className="h-10 w-auto mx-auto" />
             </a>
@@ -580,9 +581,9 @@ export default function Home() {
              </div>
              
              <div className="flex items-center gap-6 text-muted-foreground">
-               <a href="#/terms" className="hover:text-foreground transition-colors">Terms of Service</a>
-               <a href="#/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
-               <a href="#/support" className="hover:text-foreground transition-colors">Support</a>
+               <a href="/terms" className="hover:text-foreground transition-colors">Terms of Service</a>
+               <a href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
+               <a href="/support" className="hover:text-foreground transition-colors">Support</a>
              </div>
           </div>
           <div className="mt-8 pt-6 border-t border-border/30 text-center text-muted-foreground/60">

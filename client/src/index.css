@@ -174,3 +174,54 @@
     @apply font-serif tracking-tight;
   }
 }
+
+.article-content {
+  color: hsl(var(--foreground));
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.article-content > * + *,
+.article-content div > * + * {
+  margin-top: 1.25rem;
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  color: hsl(var(--primary));
+  font-family: var(--font-serif);
+  line-height: 1.2;
+  margin-top: 2.25rem;
+}
+
+.article-content h2 {
+  font-size: 2rem;
+}
+
+.article-content h3 {
+  font-size: 1.5rem;
+}
+
+.article-content p,
+.article-content li {
+  color: hsl(var(--muted-foreground));
+}
+
+.article-content a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: 1.5rem;
+}
+
+.article-content ul {
+  list-style: disc;
+}
+
+.article-content ol {
+  list-style: decimal;
+}
