@@ -59,7 +59,7 @@ export default function Support() {
 
   usePageSEO({
     title: "Support | Still - Meditation Music App",
-    description: "Get help with Still, the AI-powered meditation music app. Find answers about account management, music generation, sessions, and technical issues. Contact us at info@pentridgemedia.com."
+    description: "Get help with Still, the personalized meditation music app. Find answers about account management, music generation, sessions, and technical issues. Contact us at info@pentridgemedia.com."
   });
 
   return (

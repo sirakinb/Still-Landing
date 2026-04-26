@@ -15,7 +15,7 @@ export default function Privacy() {
 
   usePageSEO({
     title: "Privacy Policy | Still - Meditation Music App",
-    description: "Privacy Policy for Still, the AI-powered meditation music app. Learn how Pentridge Media LLC collects, uses, and protects your personal information."
+    description: "Privacy Policy for Still, the personalized meditation music app. Learn how Pentridge Media LLC collects, uses, and protects your personal information."
   });
 
   return (

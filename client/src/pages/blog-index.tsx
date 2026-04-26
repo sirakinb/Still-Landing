@@ -6,9 +6,9 @@ import { usePageSEO } from "@/hooks/usePageSEO";
 
 export default function BlogIndex() {
   usePageSEO({
-    title: "Still Blog | Meditation, Mindfulness, and AI Music",
+    title: "Still Blog | Meditation, Mindfulness, and Soundscapes",
     description:
-      "Read Still articles about meditation, mindfulness, relaxation, and AI-generated music for better daily practice.",
+      "Read Still articles about meditation, mindfulness, relaxation, and personalized soundscapes for better daily practice.",
   });
 
   return (

@@ -15,7 +15,7 @@ export default function Terms() {
 
   usePageSEO({
     title: "Terms of Service | Still - Meditation Music App",
-    description: "Terms of Service for Still, the AI-powered meditation music app by Pentridge Media LLC. Review our terms for using the Still app and services."
+    description: "Terms of Service for Still, the personalized meditation music app by Pentridge Media LLC. Review our terms for using the Still app and services."
   });
 
   return (

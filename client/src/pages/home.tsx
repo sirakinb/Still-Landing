@@ -135,8 +135,8 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   usePageSEO({
-    title: "Still - AI-Generated Meditation Music | Personalized Soundscapes",
-    description: "Still lets you create personalized AI-generated meditation music. Describe your mood, choose a style, and generate unique soundscapes for your meditation practice. Available on iOS."
+    title: "Still - Generate Your Own Meditation Music | Personalized Soundscapes",
+    description: "Still lets you create personalized meditation music. Describe your mood, choose a style, and generate unique soundscapes for your meditation practice. Available on iOS."
   });
 
   const scrollToSection = (id: string) => {
