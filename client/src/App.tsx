@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Router, Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -25,12 +25,18 @@ function AppRouter() {
   );
 }
 
-function App() {
+interface AppProps {
+  ssrPath?: string;
+}
+
+function App({ ssrPath }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <AppRouter />
+        <Router ssrPath={ssrPath}>
+          <AppRouter />
+        </Router>
       </TooltipProvider>
     </QueryClientProvider>
   );
