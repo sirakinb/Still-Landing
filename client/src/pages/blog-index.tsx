@@ -68,6 +68,18 @@ export default function BlogIndex() {
           </div>
         )}
       </main>
+
+      <footer className="border-t border-border/50 py-10">
+        <div className="container mx-auto flex flex-col gap-4 px-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+          <p>© 2026 Pentridge Media LLC. All rights reserved.</p>
+          <nav className="flex flex-wrap gap-5">
+            <Link href="/" className="hover:text-foreground">Home</Link>
+            <Link href="/support" className="hover:text-foreground">Support</Link>
+            <Link href="/privacy" className="hover:text-foreground">Privacy</Link>
+            <Link href="/terms" className="hover:text-foreground">Terms</Link>
+          </nav>
+        </div>
+      </footer>
     </div>
   );
 }

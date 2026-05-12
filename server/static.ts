@@ -14,8 +14,9 @@ export function serveStatic(app: Express) {
 
   // Prefer route-specific prerendered HTML before falling back to the SPA shell.
   app.use("*", (req, res) => {
+    const requestPath = req.originalUrl.split("?")[0] || "/";
     const normalizedPath = path
-      .normalize(req.path)
+      .normalize(requestPath)
       .replace(/^(\.\.[/\\])+/, "")
       .replace(/^[/\\]+/, "");
     const prerenderedPath = path.resolve(distPath, normalizedPath, "index.html");

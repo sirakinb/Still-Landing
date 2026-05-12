@@ -12,6 +12,7 @@ import logoImage from "@assets/STILL-APPP_1766960471016.png";
 import heroImage from "@assets/Gold_Black_Crown_x_Crown_Logo_(1024_x_1024_px)_(1290_x_2796_px_1768204792335.png";
 import libraryImage from "@assets/Red_and_White_Illustrative_Modern_Seafood_Restaurant_Facebook__1766983077536.png";
 import { usePageSEO } from "@/hooks/usePageSEO";
+import { articles, formatArticleDate } from "@/lib/articles";
 
 // Animation variants
 const fadeIn = {
@@ -133,6 +134,7 @@ function JoinBetaDialog({ children }: { children: React.ReactNode }) {
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const featuredArticles = articles.slice(0, 6);
 
   usePageSEO({
     title: "Still - Generate Your Own Meditation Music | Personalized Soundscapes",
@@ -519,6 +521,40 @@ export default function Home() {
 
 
       {/* FAQ */}
+      <section id="articles" aria-label="Meditation articles" className="py-24 bg-primary/5">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <Badge variant="outline" className="mb-4">Still Journal</Badge>
+              <h2 className="font-serif text-4xl lg:text-5xl text-primary">Meditation resources</h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Learn more about meditation music, focus, sleep, stress relief, and building a calmer daily routine.
+              </p>
+            </div>
+            <a href="/blog" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+              View all articles
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {featuredArticles.map((article) => (
+              <a
+                key={article.id}
+                href={`/blog/${article.slug}`}
+                className="group border border-border bg-background p-6 transition-colors hover:border-primary/40"
+              >
+                <p className="text-sm text-muted-foreground">{formatArticleDate(article.created_at)}</p>
+                <h3 className="mt-3 font-serif text-2xl leading-tight text-primary group-hover:underline">
+                  {article.title}
+                </h3>
+                <p className="mt-3 line-clamp-3 text-muted-foreground">{article.meta_description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="faq" aria-label="Frequently asked questions" className="py-24 max-w-3xl mx-auto px-6">
         <h2 className="font-serif text-3xl mb-8 text-center text-primary">Questions</h2>
         <Accordion type="single" collapsible className="w-full">
@@ -581,6 +617,7 @@ export default function Home() {
              </div>
              
              <div className="flex items-center gap-6 text-muted-foreground">
+               <a href="/blog" className="hover:text-foreground transition-colors">Blog</a>
                <a href="/terms" className="hover:text-foreground transition-colors">Terms of Service</a>
                <a href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
                <a href="/support" className="hover:text-foreground transition-colors">Support</a>

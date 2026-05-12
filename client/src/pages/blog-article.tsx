@@ -1,7 +1,7 @@
 import { Link, useParams } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import logoImage from "@assets/STILL-APPP_1766960471016.png";
-import { formatArticleDate, getArticleBySlug } from "@/lib/articles";
+import { articles, formatArticleDate, getArticleBySlug } from "@/lib/articles";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import NotFound from "@/pages/not-found";
 
@@ -29,6 +29,14 @@ export default function BlogArticle() {
   }
 
   const fallbackText = article.content_markdown ? markdownToPlainText(article.content_markdown) : "";
+  const relatedArticles = articles
+    .filter((candidate) => candidate.slug !== article.slug)
+    .filter((candidate) => candidate.tags?.some((tag) => article.tags?.includes(tag)))
+    .slice(0, 3);
+  const moreArticles =
+    relatedArticles.length > 0
+      ? relatedArticles
+      : articles.filter((candidate) => candidate.slug !== article.slug).slice(0, 3);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -62,8 +70,40 @@ export default function BlogArticle() {
               fallbackText.split(/\n{2,}/).map((paragraph) => <p key={paragraph}>{paragraph}</p>)
             )}
           </div>
+
+          <nav className="mt-14 border-t border-border pt-8" aria-label="Related meditation articles">
+            <h2 className="font-serif text-2xl text-primary">Related meditation articles</h2>
+            <div className="mt-5 grid gap-4">
+              {moreArticles.map((related) => (
+                <Link
+                  key={related.id}
+                  href={`/blog/${related.slug}`}
+                  className="block border border-border bg-card p-5 hover:border-primary/40"
+                >
+                  <p className="text-sm text-muted-foreground">{formatArticleDate(related.created_at)}</p>
+                  <h3 className="mt-2 font-serif text-xl leading-tight text-primary hover:underline">
+                    {related.title}
+                  </h3>
+                  <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{related.meta_description}</p>
+                </Link>
+              ))}
+            </div>
+          </nav>
         </article>
       </main>
+
+      <footer className="border-t border-border/50 py-10">
+        <div className="container mx-auto flex flex-col gap-4 px-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+          <p>© 2026 Pentridge Media LLC. All rights reserved.</p>
+          <nav className="flex flex-wrap gap-5">
+            <Link href="/" className="hover:text-foreground">Home</Link>
+            <Link href="/blog" className="hover:text-foreground">Blog</Link>
+            <Link href="/support" className="hover:text-foreground">Support</Link>
+            <Link href="/privacy" className="hover:text-foreground">Privacy</Link>
+            <Link href="/terms" className="hover:text-foreground">Terms</Link>
+          </nav>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -119,6 +119,60 @@ function getBaseStructuredData() {
   ];
 }
 
+function getFaqStructuredData() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How does the AI music generation work?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "You describe the mood, imagery, or feeling you want. Choose a style such as Ambient, Piano, or Nature, and Still uses AI to generate an original meditation track based on your input.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does it take to generate music?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Music generation typically takes one to two minutes. You will see progress while your track is being created.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I use my generated music in meditation sessions?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. You can save generated tracks to your library and use them as soundtracks for timed meditation sessions.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What devices are supported?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Still is available for iPhone running iOS 16 or later.",
+        },
+      },
+    ],
+  };
+}
+
+function getBreadcrumbStructuredData(items: Array<{ name: string; path: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteUrl}${item.path}`,
+    })),
+  };
+}
+
 async function readArticles() {
   const articleJson = JSON.parse(
     await readFile("client/src/content/articles.json", "utf-8"),
@@ -142,7 +196,7 @@ async function getSeoRoutes(): Promise<SeoRoute[]> {
       lastmod: "2026-03-12",
       changefreq: "weekly",
       priority: "1.0",
-      structuredData: getBaseStructuredData(),
+      structuredData: [...getBaseStructuredData(), getFaqStructuredData()],
     },
     {
       path: "/terms",
@@ -152,6 +206,23 @@ async function getSeoRoutes(): Promise<SeoRoute[]> {
       lastmod: "2026-01-16",
       changefreq: "monthly",
       priority: "0.3",
+      structuredData: [
+        getBreadcrumbStructuredData([
+          { name: "Home", path: "/" },
+          { name: "Terms of Service", path: "/terms" },
+        ]),
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Terms of Service",
+          url: `${siteUrl}/terms`,
+          isPartOf: {
+            "@type": "WebSite",
+            name: "Still - Meditation Music",
+            url: siteUrl,
+          },
+        },
+      ],
     },
     {
       path: "/privacy",
@@ -161,6 +232,23 @@ async function getSeoRoutes(): Promise<SeoRoute[]> {
       lastmod: "2026-01-16",
       changefreq: "monthly",
       priority: "0.3",
+      structuredData: [
+        getBreadcrumbStructuredData([
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy" },
+        ]),
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Privacy Policy",
+          url: `${siteUrl}/privacy`,
+          isPartOf: {
+            "@type": "WebSite",
+            name: "Still - Meditation Music",
+            url: siteUrl,
+          },
+        },
+      ],
     },
     {
       path: "/support",
@@ -170,6 +258,23 @@ async function getSeoRoutes(): Promise<SeoRoute[]> {
       lastmod: "2026-03-12",
       changefreq: "monthly",
       priority: "0.5",
+      structuredData: [
+        getBreadcrumbStructuredData([
+          { name: "Home", path: "/" },
+          { name: "Support", path: "/support" },
+        ]),
+        {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Support",
+          url: `${siteUrl}/support`,
+          contactPoint: {
+            "@type": "ContactPoint",
+            email: "info@pentridgemedia.com",
+            contactType: "customer support",
+          },
+        },
+      ],
     },
     {
       path: "/blog",
@@ -179,14 +284,31 @@ async function getSeoRoutes(): Promise<SeoRoute[]> {
       lastmod: latestArticleDate.slice(0, 10),
       changefreq: "weekly",
       priority: "0.7",
-      structuredData: {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        name: "Still Blog",
-        url: `${siteUrl}/blog`,
-        description:
-          "Articles about meditation, mindfulness, relaxation, and personalized soundscapes.",
-      },
+      structuredData: [
+        getBreadcrumbStructuredData([
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+        ]),
+        {
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Still Blog",
+          url: `${siteUrl}/blog`,
+          description:
+            "Articles about meditation, mindfulness, relaxation, and personalized soundscapes.",
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Still meditation articles",
+          itemListElement: articles.map((article, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            url: `${siteUrl}/blog/${article.slug}`,
+            name: article.title,
+          })),
+        },
+      ],
     },
   ];
 
@@ -202,29 +324,41 @@ async function getSeoRoutes(): Promise<SeoRoute[]> {
       priority: "0.6",
       image: article.image_url,
       type: "article",
-      structuredData: {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        headline: article.title,
-        description: article.meta_description,
-        image: article.image_url || defaultImage,
-        datePublished: article.created_at,
-        dateModified: article.updated_at || article.created_at,
-        url: `${siteUrl}/blog/${article.slug}`,
-        author: {
-          "@type": "Organization",
-          name: "Still",
-        },
-        publisher: {
-          "@type": "Organization",
-          name: "Still",
-          logo: {
-            "@type": "ImageObject",
-            url: defaultImage,
+      structuredData: [
+        getBreadcrumbStructuredData([
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: article.title, path: `/blog/${article.slug}` },
+        ]),
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: article.title,
+          description: article.meta_description,
+          image: article.image_url || defaultImage,
+          datePublished: article.created_at,
+          dateModified: article.updated_at || article.created_at,
+          url: `${siteUrl}/blog/${article.slug}`,
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `${siteUrl}/blog/${article.slug}`,
           },
+          author: {
+            "@type": "Organization",
+            name: "Still",
+            url: siteUrl,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Still",
+            logo: {
+              "@type": "ImageObject",
+              url: defaultImage,
+            },
+          },
+          keywords: article.tags?.join(", "),
         },
-        keywords: article.tags?.join(", "),
-      },
+      ],
     });
   }
 

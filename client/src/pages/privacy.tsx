@@ -31,6 +31,7 @@ export default function Privacy() {
             </Link>
             
             <nav className="hidden md:flex items-center space-x-8">
+              <a href="/blog" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Blog</a>
               <a href="/support" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Support</a>
               <a href="/terms" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">Terms</a>
             </nav>
@@ -51,6 +52,7 @@ export default function Privacy() {
             className="md:hidden bg-white border-b border-stone-200"
           >
             <div className="px-4 py-4 space-y-3">
+              <a href="/blog" className="block text-stone-600 hover:text-stone-900">Blog</a>
               <a href="/support" className="block text-stone-600 hover:text-stone-900">Support</a>
               <a href="/terms" className="block text-stone-600 hover:text-stone-900">Terms</a>
             </div>
@@ -336,6 +338,7 @@ export default function Privacy() {
               <span className="font-serif text-lg font-semibold">Still</span>
             </div>
             <div className="flex items-center space-x-6 text-sm text-stone-400">
+              <a href="/blog" className="hover:text-white transition-colors">Blog</a>
               <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
               <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="/support" className="hover:text-white transition-colors">Support</a>
