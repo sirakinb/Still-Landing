@@ -43,7 +43,7 @@ When the endpoint receives `CANCELLATION`:
   - Resend API key.
   - Use a sending-only key restricted to the verified Still sending domain if possible.
 - `RESEND_FROM_EMAIL`
-  - Recommended: `Akinyemi from Still <aki.b@stillapp.us>`
+  - Recommended: `Akinyemi from Still <aki.b@pentridgemedia.com>`
 - `OWNER_NOTIFICATION_EMAIL`
   - Recommended: `aki.b@pentridgemedia.com`
 - `REVENUECAT_WEBHOOK_AUTH`
@@ -51,7 +51,7 @@ When the endpoint receives `CANCELLATION`:
   - Set this to the exact authorization header value configured in RevenueCat.
 - `RESEND_REPLY_TO`
   - Optional.
-  - Defaults to `aki.b@stillapp.us`.
+  - Defaults to `aki.b@pentridgemedia.com`.
 
 ## RevenueCat Setup
 
@@ -96,9 +96,11 @@ Configured in Vercel production:
 
 - `RESEND_API_KEY`
 - `RESEND_FROM_EMAIL`
+- `RESEND_REPLY_TO`
 - `OWNER_NOTIFICATION_EMAIL`
 
 Known blocker:
 
-- Resend rejected a live test because `stillapp.us` is not verified in Resend.
-- Verify `stillapp.us` in Resend, or change `RESEND_FROM_EMAIL` to a verified sending domain before enabling the RevenueCat webhooks.
+- Resend rejected the first live test because `stillapp.us` was not verified in Resend.
+- `RESEND_FROM_EMAIL` has since been changed to `Akinyemi from Still <aki.b@pentridgemedia.com>`.
+- Confirm `pentridgemedia.com` is verified in Resend before enabling the RevenueCat webhooks.

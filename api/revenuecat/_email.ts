@@ -76,7 +76,7 @@ export function getOwnerEmail() {
 }
 
 export function getFromEmail() {
-  return process.env.RESEND_FROM_EMAIL || "Akinyemi from Still <aki.b@stillapp.us>";
+  return process.env.RESEND_FROM_EMAIL || "Akinyemi from Still <aki.b@pentridgemedia.com>";
 }
 
 function escapeHtml(value: unknown) {
@@ -187,7 +187,7 @@ export async function sendEmail(input: SendEmailInput) {
       html: input.html,
       text: input.text,
       scheduledAt: input.scheduledAt,
-      reply_to: process.env.RESEND_REPLY_TO || "aki.b@stillapp.us",
+      reply_to: process.env.RESEND_REPLY_TO || "aki.b@pentridgemedia.com",
       tags: input.tags?.map((tag) => ({
         name: sanitizeTag(tag.name),
         value: sanitizeTag(tag.value),
