@@ -11,6 +11,7 @@ import Support from "@/pages/support";
 import BlogIndex from "@/pages/blog-index";
 import BlogArticle from "@/pages/blog-article";
 import MeditationMusicGenerator from "@/pages/meditation-music-generator";
+import SeoCommandCenter from "@/pages/seo-command-center";
 
 function AppRouter() {
   return (
@@ -22,6 +23,7 @@ function AppRouter() {
       <Route path="/blog" component={BlogIndex} />
       <Route path="/blog/:slug" component={BlogArticle} />
       <Route path="/tools/meditation-music-generator" component={MeditationMusicGenerator} />
+      <Route path="/seo-command-center" component={SeoCommandCenter} />
       <Route component={NotFound} />
     </Switch>
   );
