@@ -165,6 +165,7 @@ export default function Home() {
             <button onClick={() => scrollToSection('features')} className="text-sm font-medium hover:text-primary transition-colors">Features</button>
             <button onClick={() => scrollToSection('styles')} className="text-sm font-medium hover:text-primary transition-colors">Styles</button>
             <button onClick={() => scrollToSection('faq')} className="text-sm font-medium hover:text-primary transition-colors">FAQ</button>
+            <a href="/tools/meditation-music-generator" className="text-sm font-medium hover:text-primary transition-colors">Tools</a>
             <a href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</a>
           </div>
 
@@ -179,6 +180,7 @@ export default function Home() {
           <div className="md:hidden absolute top-16 left-0 right-0 bg-background border-b border-border/40 p-4 flex flex-col gap-4 shadow-lg animate-in slide-in-from-top-5">
             <button onClick={() => scrollToSection('features')} className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Features</button>
             <button onClick={() => scrollToSection('styles')} className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Styles</button>
+            <a href="/tools/meditation-music-generator" className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Tools</a>
             <a href="/blog" className="text-left px-4 py-2 hover:bg-secondary/50 rounded-lg">Blog</a>
             <a href="https://apps.apple.com/us/app/still-meditation/id6757083149" target="_blank" rel="noopener noreferrer" className="w-full">
               <img src="/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" className="h-10 w-auto mx-auto" />

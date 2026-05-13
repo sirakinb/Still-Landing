@@ -277,6 +277,71 @@ async function getSeoRoutes(): Promise<SeoRoute[]> {
       ],
     },
     {
+      path: "/tools/meditation-music-generator",
+      title: "Meditation Music Generator | Create a Custom Meditation Prompt",
+      description:
+        "Use Still's free meditation music generator to create a personalized prompt for AI meditation music, soundscapes, binaural tones, sleep, focus, and mindfulness.",
+      lastmod: "2026-05-12",
+      changefreq: "weekly",
+      priority: "0.8",
+      structuredData: [
+        getBreadcrumbStructuredData([
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/tools/meditation-music-generator" },
+          { name: "Meditation Music Generator", path: "/tools/meditation-music-generator" },
+        ]),
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "Meditation Music Generator",
+          applicationCategory: "LifestyleApplication",
+          operatingSystem: "Web",
+          url: `${siteUrl}/tools/meditation-music-generator`,
+          description:
+            "A free meditation music prompt generator for personalized meditation soundscapes, AI meditation music, binaural tones, sleep, focus, and mindfulness.",
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+          },
+          creator: {
+            "@type": "Organization",
+            name: "Pentridge Media LLC",
+            url: siteUrl,
+          },
+          isPartOf: {
+            "@type": "WebSite",
+            name: "Still - Meditation Music",
+            url: siteUrl,
+          },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          name: "How to create a meditation music prompt",
+          description:
+            "Choose a meditation goal, style, texture, duration, and mood to create a detailed meditation music prompt.",
+          step: [
+            {
+              "@type": "HowToStep",
+              name: "Choose a style",
+              text: "Select a meditation music style such as ambient, nature, piano, Tibetan bowls, binaural, lo-fi, or classical.",
+            },
+            {
+              "@type": "HowToStep",
+              name: "Set the goal and duration",
+              text: "Choose the meditation purpose and session length so the soundscape matches the practice.",
+            },
+            {
+              "@type": "HowToStep",
+              name: "Generate the prompt",
+              text: "Copy the detailed prompt and use Still to create the full custom meditation track.",
+            },
+          ],
+        },
+      ],
+    },
+    {
       path: "/blog",
       title: "Still Blog | Meditation, Mindfulness, and Soundscapes",
       description:
