@@ -342,46 +342,6 @@ async function getSeoRoutes(): Promise<SeoRoute[]> {
       ],
     },
     {
-      path: "/seo-command-center",
-      title: "SEO Command Center | Still Growth System",
-      description:
-        "A working SEO command center prototype for planning free tools, articles, backlink research, AI visibility tracking, and organic growth experiments for Still.",
-      lastmod: "2026-05-13",
-      changefreq: "weekly",
-      priority: "0.4",
-      structuredData: [
-        getBreadcrumbStructuredData([
-          { name: "Home", path: "/" },
-          { name: "SEO Command Center", path: "/seo-command-center" },
-        ]),
-        {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          name: "SEO Command Center",
-          applicationCategory: "BusinessApplication",
-          operatingSystem: "Web",
-          url: `${siteUrl}/seo-command-center`,
-          description:
-            "A command-center prototype for planning SEO tools, content assets, backlink research, AI visibility tracking, and organic growth experiments.",
-          offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-          },
-          creator: {
-            "@type": "Organization",
-            name: "Pentridge Media LLC",
-            url: siteUrl,
-          },
-          isPartOf: {
-            "@type": "WebSite",
-            name: "Still - Meditation Music",
-            url: siteUrl,
-          },
-        },
-      ],
-    },
-    {
       path: "/blog",
       title: "Still Blog | Meditation, Mindfulness, and Soundscapes",
       description:
