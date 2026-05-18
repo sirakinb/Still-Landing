@@ -10,6 +10,9 @@
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
     "seo:collect": "tsx scripts/seo-ops/collect.ts",
+    "seo:keywords": "tsx scripts/seo-ops/dataforseo-keywords.ts",
+    "seo:tool-cron": "bash scripts/seo-ops/run-tool-build-cron.sh",
+    "seo:tool-cron:install": "bash scripts/seo-ops/install-tool-build-cron.sh",
     "seo:setup": "tsx scripts/seo-ops/setup.ts",
     "seo:dashboard": "tsx scripts/seo-ops/dashboard.ts",
     "db:push": "drizzle-kit push"

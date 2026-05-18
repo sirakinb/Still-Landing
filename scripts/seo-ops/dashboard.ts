@@ -1,7 +1,10 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 const reportPath = path.resolve("seo-ops-data/latest-report.json");
+const toolQueuePath = path.resolve("scripts/seo-ops/tool-build-queue.json");
+const toolStatePath = path.resolve("seo-ops-data/tool-cron/state.json");
+const toolLogsDir = path.resolve("seo-ops-data/tool-cron/logs");
 const outDir = path.resolve("seo-ops-data/dashboard");
 const outFile = path.join(outDir, "index.html");
 
@@ -17,6 +20,13 @@ const inspections = Array.isArray(report.googleSearchConsole?.inspections) ? rep
 const gscRows = report.googleSearchConsole?.performance?.rows || [];
 const ga4Rows = report.ga4?.report?.rows || [];
 const appRows = report.appStoreConnect?.apps?.data || [];
+const toolQueue = existsSync(toolQueuePath) ? JSON.parse(readFileSync(toolQueuePath, "utf8")) : [];
+const toolState = existsSync(toolStatePath) ? JSON.parse(readFileSync(toolStatePath, "utf8")) : { completed: {} };
+const completedTools = toolState.completed || {};
+const nextTool = toolQueue.find((tool: any) => !completedTools[tool.slug]);
+const latestToolLog = existsSync(toolLogsDir)
+  ? readdirSync(toolLogsDir).filter((file) => file.endsWith(".log")).sort().at(-1)
+  : "";
 
 function escapeHtml(value: unknown) {
   return String(value ?? "")
@@ -59,6 +69,18 @@ const connectedCount = [
 
 const topGscRows = gscRows.slice(0, 8);
 const topGa4Rows = ga4Rows.slice(0, 8);
+const toolRows = toolQueue.map((tool: any) => {
+  const completed = completedTools[tool.slug];
+  const status = completed ? "Done" : nextTool?.slug === tool.slug ? "Next" : "Queued";
+  const statusClass = completed ? "good" : nextTool?.slug === tool.slug ? "warn" : "neutral";
+  return `<tr>
+    <td><a href="${escapeHtml(tool.url)}">${escapeHtml(tool.title)}</a></td>
+    <td>${escapeHtml(tool.primaryKeyword)}</td>
+    <td><span class="pill ${statusClass}">${status}</span></td>
+    <td>${completed ? escapeHtml(fmtDate(completed.completedAt)) : ""}</td>
+    <td>${escapeHtml(completed?.branch || "")}</td>
+  </tr>`;
+}).join("");
 const urlRows = crawl.map((item: any) => {
   const inspection = inspections.find((entry: any) => entry.url === item.url);
   const coverage = inspection?.indexStatus?.coverageState || (inspection?.ok ? "Inspected" : inspection?.error || "Not inspected");
@@ -74,7 +96,7 @@ const urlRows = crawl.map((item: any) => {
 }).join("");
 
 const actions = [
-  ga4Rows.length ? null : ["Watch GA4", "Connected, but page view rows are empty. Confirm the web stream tag is installed on the landing page."],
+  ga4Rows.length ? null : ["Watch GA4", "Connected and tag is installed, but page view rows are empty. Check the GA4 property/stream mapping, data freshness, consent/filtering, or whether traffic has reached the site."],
   gscRows.length ? null : ["Wait for GSC data", "Search Console is connected, but query data needs impressions before it can populate."],
   canonicalWarnings ? ["Fix canonicals", `${canonicalWarnings} URL${canonicalWarnings === 1 ? "" : "s"} need canonical review.`] : null,
   missingDescriptions ? ["Add descriptions", `${missingDescriptions} URL${missingDescriptions === 1 ? "" : "s"} are missing meta descriptions.`] : null,
@@ -173,6 +195,7 @@ const html = `<!doctype html>
         <div>Search Console</div>
         <div>Analytics</div>
         <div>Technical URLs</div>
+        <div>Tool Builder</div>
         <div>App Store</div>
       </nav>
       <div class="aside-foot">
@@ -213,6 +236,41 @@ const html = `<!doctype html>
           <div class="metric-label">Needs Review</div>
           <div class="metric">${redirected + canonicalWarnings + failedInspections + missingDescriptions}</div>
           <div class="sub">${redirected} redirects, ${canonicalWarnings} canonical, ${missingDescriptions} descriptions</div>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top:12px">
+        <div class="section-head">
+          <h2>Tool builder</h2>
+          <span class="pill ${nextTool ? "warn" : "good"}">${Object.keys(completedTools).length}/${toolQueue.length} complete</span>
+        </div>
+        <div class="grid">
+          <div>
+            <div class="metric-label">Cron mode</div>
+            <div class="metric" style="font-size:22px">Auto</div>
+            <div class="sub">Mondays 9:15 AM, direct commit to main after checks pass</div>
+          </div>
+          <div>
+            <div class="metric-label">Next tool</div>
+            <div class="metric" style="font-size:22px">${escapeHtml(nextTool?.title || "Queue complete")}</div>
+            <div class="sub">${escapeHtml(nextTool?.url || "No queued tools remaining")}</div>
+          </div>
+          <div>
+            <div class="metric-label">Last log</div>
+            <div class="metric" style="font-size:18px">${escapeHtml(latestToolLog || "No runs yet")}</div>
+            <div class="sub">Logs write to seo-ops-data/tool-cron/logs</div>
+          </div>
+          <div>
+            <div class="metric-label">Queue length</div>
+            <div class="metric" style="font-size:22px">${toolQueue.length}</div>
+            <div class="sub">One tool per weekly run</div>
+          </div>
+        </div>
+        <div class="table-wrap" style="margin-top:14px">
+          <table>
+            <thead><tr><th>Tool</th><th>Primary keyword</th><th>Status</th><th>Completed</th><th>Branch</th></tr></thead>
+            <tbody>${toolRows || `<tr><td colspan="5">No tool queue configured.</td></tr>`}</tbody>
+          </table>
         </div>
       </section>
 

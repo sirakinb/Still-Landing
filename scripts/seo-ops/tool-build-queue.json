@@ -1,0 +1,63 @@
+[
+  {
+    "slug": "meditation-timer",
+    "title": "Meditation Timer",
+    "url": "/tools/meditation-timer",
+    "primaryKeyword": "meditation timer",
+    "supportingKeywords": ["mindfulness timer", "online meditation timer", "free meditation timer"],
+    "features": [
+      "duration presets",
+      "custom duration input",
+      "start/pause/reset controls",
+      "interval bell option",
+      "ambient background selector",
+      "session intention label",
+      "App Store CTA after timer start"
+    ]
+  },
+  {
+    "slug": "white-noise-generator",
+    "title": "White Noise Generator",
+    "url": "/tools/white-noise-generator",
+    "primaryKeyword": "white noise generator",
+    "supportingKeywords": ["pink noise generator", "brown noise generator", "sleep noise generator"],
+    "features": [
+      "white, pink, and brown noise modes",
+      "volume control",
+      "sleep and focus presets",
+      "timer control",
+      "plain-language explanation of noise colors",
+      "App Store CTA for personalized soundscapes"
+    ]
+  },
+  {
+    "slug": "binaural-beats-generator",
+    "title": "Binaural Beats Generator",
+    "url": "/tools/binaural-beats-generator",
+    "primaryKeyword": "binaural beats generator",
+    "supportingKeywords": ["binaural beats for focus", "binaural beats for sleep", "binaural beats meditation"],
+    "features": [
+      "target state selector",
+      "carrier frequency control",
+      "beat frequency presets",
+      "timer control",
+      "headphones safety note",
+      "App Store CTA for meditation music"
+    ]
+  },
+  {
+    "slug": "breathing-timer",
+    "title": "Breathing Timer",
+    "url": "/tools/breathing-timer",
+    "primaryKeyword": "breathing timer",
+    "supportingKeywords": ["box breathing timer", "4 7 8 breathing timer", "breathing exercise timer"],
+    "features": [
+      "box breathing preset",
+      "4-7-8 breathing preset",
+      "coherent breathing preset",
+      "custom inhale/hold/exhale controls",
+      "visual breathing animation",
+      "App Store CTA after completing a cycle"
+    ]
+  }
+]

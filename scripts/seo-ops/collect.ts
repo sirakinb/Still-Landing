@@ -22,9 +22,11 @@ function daysAgo(days: number) {
 async function crawlUrl(url: string) {
   const response = await fetch(url, { redirect: "follow" });
   const html = await response.text();
-  const canonical = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i)?.[1] || "";
+  const canonicalMatch = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=(["'])(.*?)\1/i);
+  const descriptionMatch = html.match(/<meta[^>]+name=["']description["'][^>]+content=(["'])(.*?)\1/i);
+  const canonical = canonicalMatch?.[2] || "";
   const title = html.match(/<title>(.*?)<\/title>/is)?.[1]?.replace(/\s+/g, " ").trim() || "";
-  const description = html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i)?.[1] || "";
+  const description = descriptionMatch?.[2] || "";
   return {
     url,
     status: response.status,
