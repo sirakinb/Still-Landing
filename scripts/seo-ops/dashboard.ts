@@ -286,8 +286,8 @@ const html = `<!doctype html>
         <div class="overview-grid">
           <div class="panel">
             <div class="section-head">
-              <h2>Backlink Exchange</h2>
-              <span class="pill neutral">Outrank snapshot</span>
+              <h2>Authority Growth</h2>
+              <span class="pill neutral">SEO snapshot</span>
             </div>
             <div class="grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
               <div>
@@ -328,7 +328,7 @@ const html = `<!doctype html>
               <div>
                 <div class="metric-label">Planned</div>
                 <div class="metric">${plannedArticles}</div>
-                <div class="sub">handled by Uprank/Outrank</div>
+                <div class="sub">planned content pipeline</div>
               </div>
             </div>
           </div>
