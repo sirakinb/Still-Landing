@@ -56,15 +56,14 @@ async function main() {
   };
 
   if (env("GOOGLE_APPLICATION_CREDENTIALS")) {
-    const token = await googleAccessToken([
+    const searchConsoleToken = await googleAccessToken([
       "https://www.googleapis.com/auth/webmasters.readonly",
-      "https://www.googleapis.com/auth/analytics.readonly",
-    ]);
+    ], { forceServiceAccount: true });
 
     const inspections = [];
     for (const url of urls) {
       try {
-        const result = await inspectUrl(token, gscSiteUrl, url);
+        const result = await inspectUrl(searchConsoleToken, gscSiteUrl, url);
         const indexStatus = result.inspectionResult?.indexStatusResult || {};
         inspections.push({ url, ok: true, indexStatus });
       } catch (error) {
@@ -74,7 +73,7 @@ async function main() {
 
     let performance: unknown = null;
     try {
-      performance = await searchAnalytics(token, gscSiteUrl, daysAgo(28), today);
+      performance = await searchAnalytics(searchConsoleToken, gscSiteUrl, daysAgo(28), today);
     } catch (error) {
       performance = { error: error instanceof Error ? error.message : String(error) };
     }
@@ -83,10 +82,13 @@ async function main() {
 
     if (env("GA4_PROPERTY_ID")) {
       try {
+        const analyticsToken = await googleAccessToken([
+          "https://www.googleapis.com/auth/analytics.readonly",
+        ]);
         report.ga4 = {
           configured: true,
           propertyId: env("GA4_PROPERTY_ID"),
-          report: await ga4RunReport(token, env("GA4_PROPERTY_ID"), daysAgo(28), today),
+          report: await ga4RunReport(analyticsToken, env("GA4_PROPERTY_ID"), daysAgo(28), today),
         };
       } catch (error) {
         report.ga4 = { configured: true, error: error instanceof Error ? error.message : String(error) };

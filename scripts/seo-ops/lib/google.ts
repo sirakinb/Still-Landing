@@ -21,11 +21,12 @@ function serviceAccount(): ServiceAccount {
   return JSON.parse(readFileSync(file, "utf8")) as ServiceAccount;
 }
 
-export async function googleAccessToken(scopes: string[]) {
+export async function googleAccessToken(scopes: string[], options: { forceServiceAccount?: boolean } = {}) {
   const command = env("GOOGLE_ACCESS_TOKEN_COMMAND");
-  if (command) {
+  if (command && !options.forceServiceAccount) {
     const [bin, ...args] = command.split(/\s+/);
-    return execFileSync(bin, args, { encoding: "utf8" }).trim();
+    const { GOOGLE_APPLICATION_CREDENTIALS: _credentials, ...childEnv } = process.env;
+    return execFileSync(bin, args, { encoding: "utf8", env: childEnv }).trim();
   }
 
   const account = serviceAccount();
