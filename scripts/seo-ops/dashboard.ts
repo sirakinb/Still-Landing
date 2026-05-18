@@ -136,78 +136,100 @@ const html = `<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Still SEO Ops</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;900&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: light;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --ink: #080b13;
-      --muted: #667085;
-      --line: #e0e5ec;
-      --panel: #ffffff;
-      --canvas: #f6f7fb;
-      --soft: #f1f4f8;
-      --purple: #8b4dff;
-      --purple-soft: #f4edff;
-      --green: #17a46b;
-      --amber: #b76b00;
-      --red: #b42318;
-      --slate: #202436;
+      color-scheme: dark;
+      font-family: Geist, "Geist Variable", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --ink: #ffffff;
+      --muted: #a3a3a3;
+      --line: rgba(255,255,255,.12);
+      --panel: rgba(12,12,12,.86);
+      --panel-strong: #111111;
+      --canvas: #000000;
+      --soft: rgba(255,255,255,.07);
+      --purple: #8b5cf6;
+      --purple-soft: rgba(139,92,246,.14);
+      --gold: #d4af37;
+      --green: #4ade80;
+      --amber: #facc15;
+      --red: #fb7185;
+      --slate: #171717;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; color: var(--ink); background: var(--canvas); }
-    a { color: var(--purple); text-decoration: none; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(139,92,246,.18), transparent 34%),
+        radial-gradient(circle at 82% 8%, rgba(212,175,55,.12), transparent 26%),
+        linear-gradient(180deg, #050505 0%, #000 45%, #030303 100%);
+      min-height: 100vh;
+    }
+    a { color: #c4b5fd; text-decoration: none; }
     .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); min-height: 100vh; }
-    aside { background: var(--panel); border-right: 1px solid var(--line); padding: 22px 18px; position: sticky; top: 0; height: 100vh; }
-    .brand { display: flex; gap: 11px; align-items: center; font-weight: 800; font-size: 18px; margin-bottom: 22px; }
-    .brand img { width: 34px; height: 34px; border-radius: 8px; object-fit: cover; }
-    .site-card { border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin-bottom: 18px; }
-    .site-card strong { display: block; font-size: 14px; }
+    aside {
+      background: rgba(0,0,0,.72);
+      border-right: 1px solid var(--line);
+      padding: 22px 18px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      backdrop-filter: blur(18px);
+    }
+    .brand { display: flex; gap: 11px; align-items: center; font-weight: 900; font-size: 18px; margin-bottom: 22px; letter-spacing: -.02em; }
+    .brand img { width: 34px; height: 34px; border-radius: 9px; object-fit: cover; border: 1px solid rgba(255,255,255,.14); }
+    .site-card { border: 1px solid var(--line); border-radius: 12px; padding: 13px; margin-bottom: 18px; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025)); }
+    .site-card strong { display: block; font-size: 14px; color: #fff; }
     .site-card span { color: var(--muted); font-size: 12px; }
     nav { display: grid; gap: 5px; font-size: 14px; }
-    nav button { border: 0; background: transparent; color: #2d3340; display: flex; gap: 10px; align-items: center; width: 100%; text-align: left; padding: 10px 11px; border-radius: 8px; cursor: pointer; font: inherit; }
-    nav button:hover, nav button.active { background: #f0f2f6; }
+    nav button { border: 1px solid transparent; background: transparent; color: #b8b8b8; display: flex; gap: 10px; align-items: center; width: 100%; text-align: left; padding: 10px 11px; border-radius: 10px; cursor: pointer; font: inherit; }
+    nav button:hover, nav button.active { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.11); color: #fff; }
+    nav button.active { box-shadow: inset 0 0 0 1px rgba(139,92,246,.18); }
     .aside-foot { position: absolute; left: 18px; right: 18px; bottom: 18px; border-top: 1px solid var(--line); padding-top: 14px; color: var(--muted); font-size: 12px; line-height: 1.5; }
     main { padding: 28px 34px 44px; }
     header { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 22px; }
-    h1 { margin: 0; font-size: 30px; line-height: 1.05; letter-spacing: 0; }
-    h2 { margin: 0; font-size: 16px; letter-spacing: .08em; text-transform: uppercase; color: #687389; }
-    .domain { color: #687389; font-size: 18px; font-weight: 700; }
+    h1 { margin: 0; font-size: 36px; line-height: 1.02; letter-spacing: -.045em; font-weight: 900; }
+    h2 { margin: 0; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #b8b8b8; font-family: "Geist Mono", ui-monospace, monospace; }
+    .domain { color: #8d8d8d; font-size: 18px; font-weight: 600; letter-spacing: -.02em; }
     .sub { color: var(--muted); font-size: 13px; margin-top: 7px; }
     .toolbar { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
     .chip, .pill { display: inline-flex; align-items: center; border-radius: 999px; white-space: nowrap; }
-    .chip { border: 1px solid var(--line); background: var(--panel); padding: 8px 11px; font-size: 12px; color: #475467; }
+    .chip { border: 1px solid var(--line); background: rgba(255,255,255,.045); padding: 8px 11px; font-size: 12px; color: #d4d4d4; backdrop-filter: blur(10px); }
     .pill { padding: 4px 8px; font-size: 12px; font-weight: 700; }
-    .good { background: #e8f8f0; color: #0d7b50; }
-    .warn { background: #fff3d6; color: var(--amber); }
-    .bad { background: #fde8e7; color: var(--red); }
-    .neutral { background: #eef3f8; color: #475467; }
+    .good { background: rgba(74,222,128,.13); color: var(--green); }
+    .warn { background: rgba(250,204,21,.12); color: var(--amber); }
+    .bad { background: rgba(251,113,133,.13); color: var(--red); }
+    .neutral { background: rgba(255,255,255,.08); color: #d4d4d4; }
     .view { display: none; }
     .view.active { display: block; }
     .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
     .overview-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, .9fr); gap: 14px; }
-    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 20px; box-shadow: 0 1px 2px rgba(16, 24, 40, .035); }
-    .metric-label { color: #687389; font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; }
-    .metric { font-size: 34px; line-height: 1; font-weight: 850; margin-top: 10px; letter-spacing: 0; }
+    .panel { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025)); border: 1px solid var(--line); border-radius: 16px; padding: 20px; box-shadow: 0 28px 80px rgba(0,0,0,.25); backdrop-filter: blur(18px); }
+    .metric-label { color: #a3a3a3; font-size: 11px; text-transform: uppercase; letter-spacing: .18em; font-weight: 700; font-family: "Geist Mono", ui-monospace, monospace; }
+    .metric { font-size: 36px; line-height: 1; font-weight: 900; margin-top: 10px; letter-spacing: -.04em; }
     .metric-row { display: flex; align-items: baseline; gap: 8px; }
     .delta { color: var(--muted); font-size: 12px; font-weight: 650; }
     .chart { height: 190px; display: flex; align-items: end; }
     .chart svg { width: 100%; height: 142px; overflow: visible; }
     .dr-card { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; }
-    .ring { width: 58px; height: 58px; border-radius: 999px; border: 8px solid #e8f8f0; display: grid; place-items: center; color: var(--green); font-weight: 850; }
+    .ring { width: 58px; height: 58px; border-radius: 999px; border: 8px solid rgba(74,222,128,.18); display: grid; place-items: center; color: var(--green); font-weight: 900; background: rgba(74,222,128,.06); }
     .recommendations { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
-    .recommendation { background: var(--purple-soft); border: 1px solid #e3d2ff; border-radius: 14px; padding: 16px; min-height: 132px; }
+    .recommendation { background: linear-gradient(145deg, rgba(139,92,246,.16), rgba(255,255,255,.035)); border: 1px solid rgba(139,92,246,.26); border-radius: 14px; padding: 16px; min-height: 132px; }
     .recommendation strong { display: block; font-size: 15px; margin-bottom: 8px; }
-    .recommendation span { color: #687389; font-size: 13px; line-height: 1.45; }
+    .recommendation span { color: #b8b8b8; font-size: 13px; line-height: 1.45; }
     .bar { height: 8px; background: var(--soft); border-radius: 999px; overflow: hidden; margin-top: 14px; }
     .bar span { display: block; height: 100%; background: var(--green); }
-    .bar.purple span { background: var(--purple); }
+    .bar.purple span { background: linear-gradient(90deg, var(--purple), var(--gold)); }
     .section-head { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 14px; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    th, td { padding: 11px 10px; border-bottom: 1px solid #edf1f5; text-align: left; vertical-align: top; }
+    th, td { padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left; vertical-align: top; }
     th { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; font-weight: 800; }
-    tbody tr:hover { background: #f8fafc; }
-    .empty { border: 1px dashed #cfd8e3; border-radius: 12px; padding: 18px; color: var(--muted); background: #fbfcfe; }
+    tbody tr:hover { background: rgba(255,255,255,.045); }
+    .empty { border: 1px dashed rgba(255,255,255,.16); border-radius: 12px; padding: 18px; color: var(--muted); background: rgba(255,255,255,.035); }
     .table-wrap { overflow-x: auto; }
     .url-table td:first-child { min-width: 360px; }
     @media (max-width: 1180px) {
@@ -281,12 +303,12 @@ const html = `<!doctype html>
               <svg viewBox="0 0 425 112" role="img" aria-label="Backlink growth chart">
                 <defs>
                   <linearGradient id="area" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0" stop-color="#8b4dff" stop-opacity=".28"/>
-                    <stop offset="1" stop-color="#8b4dff" stop-opacity=".06"/>
+                    <stop offset="0" stop-color="#8b5cf6" stop-opacity=".32"/>
+                    <stop offset="1" stop-color="#d4af37" stop-opacity=".05"/>
                   </linearGradient>
                 </defs>
                 <polygon points="0,112 ${sparkline} 425,112" fill="url(#area)"></polygon>
-                <polyline points="${sparkline}" fill="none" stroke="#7c4dff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                <polyline points="${sparkline}" fill="none" stroke="#d4af37" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></polyline>
               </svg>
             </div>
             <div class="sub">Apr 26 to May 18</div>
