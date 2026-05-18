@@ -84,9 +84,7 @@ const publishedArticles = blogUrls.length;
 const plannedArticles = 27;
 const googleClicks = gscRows.reduce((total: number, row: any) => total + numberValue(row.clicks), 0);
 const googleImpressions = gscRows.reduce((total: number, row: any) => total + numberValue(row.impressions), 0);
-const verifiedBacklinks = 19;
-const availableCredits = 24;
-const domainRating = 9;
+const completedToolCount = Object.keys(completedTools).length;
 
 const topGscRows = gscRows.slice(0, 14);
 const topGa4Rows = ga4Rows.slice(0, 14);
@@ -215,8 +213,6 @@ const html = `<!doctype html>
     .delta { color: var(--muted); font-size: 12px; font-weight: 650; }
     .chart { height: 190px; display: flex; align-items: end; }
     .chart svg { width: 100%; height: 142px; overflow: visible; }
-    .dr-card { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; }
-    .ring { width: 58px; height: 58px; border-radius: 999px; border: 8px solid rgba(74,222,128,.18); display: grid; place-items: center; color: var(--green); font-weight: 900; background: rgba(74,222,128,.06); }
     .recommendations { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
     .recommendation { background: linear-gradient(145deg, rgba(139,92,246,.16), rgba(255,255,255,.035)); border: 1px solid rgba(139,92,246,.26); border-radius: 14px; padding: 16px; min-height: 132px; }
     .recommendation strong { display: block; font-size: 15px; margin-bottom: 8px; }
@@ -286,21 +282,21 @@ const html = `<!doctype html>
         <div class="overview-grid">
           <div class="panel">
             <div class="section-head">
-              <h2>Authority Growth</h2>
-              <span class="pill neutral">SEO snapshot</span>
+              <h2>Organic Foundation</h2>
+              <span class="pill neutral">Live report</span>
             </div>
             <div class="grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
               <div>
-                <div class="metric-label">Verified Backlinks</div>
-                <div class="metric">${verifiedBacklinks}</div>
+                <div class="metric-label">Sitemap URLs</div>
+                <div class="metric">${crawl.length}</div>
               </div>
               <div>
-                <div class="metric-label">Available Credits</div>
-                <div class="metric">${availableCredits}</div>
+                <div class="metric-label">Clean URLs</div>
+                <div class="metric">${cleanUrls}</div>
               </div>
             </div>
             <div class="chart">
-              <svg viewBox="0 0 425 112" role="img" aria-label="Backlink growth chart">
+              <svg viewBox="0 0 425 112" role="img" aria-label="SEO foundation chart">
                 <defs>
                   <linearGradient id="area" x1="0" x2="0" y1="0" y2="1">
                     <stop offset="0" stop-color="#8b5cf6" stop-opacity=".32"/>
@@ -311,7 +307,7 @@ const html = `<!doctype html>
                 <polyline points="${sparkline}" fill="none" stroke="#d4af37" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></polyline>
               </svg>
             </div>
-            <div class="sub">Apr 26 to May 18</div>
+            <div class="sub">Current crawl and indexing foundation</div>
           </div>
 
           <div class="panel">
@@ -335,17 +331,15 @@ const html = `<!doctype html>
         </div>
 
         <div class="grid" style="margin-top:14px">
-          <div class="panel dr-card">
-            <div class="ring">${domainRating}</div>
-            <div>
-              <div class="metric-label">Domain Rating</div>
-              <div class="sub">via Ahrefs snapshot. Live DR requires Ahrefs API/account access.</div>
-            </div>
-          </div>
           <div class="panel">
             <div class="metric-label">Google Clicks</div>
             <div class="metric">${googleClicks}</div>
             <div class="sub">${googleImpressions} impressions tracked</div>
+          </div>
+          <div class="panel">
+            <div class="metric-label">GSC Inspections</div>
+            <div class="metric">${inspections.length}</div>
+            <div class="sub">${indexed} indexed or passing</div>
           </div>
           <div class="panel">
             <div class="metric-label">Index Coverage</div>
@@ -354,7 +348,7 @@ const html = `<!doctype html>
           </div>
           <div class="panel">
             <div class="metric-label">Tool Queue</div>
-            <div class="metric">${Object.keys(completedTools).length}/${toolQueue.length}</div>
+            <div class="metric">${completedToolCount}/${toolQueue.length}</div>
             <div class="sub">${escapeHtml(nextTool?.title || "Queue complete")}</div>
           </div>
         </div>
@@ -431,10 +425,10 @@ const html = `<!doctype html>
           <div class="panel"><div class="metric-label">Cron Mode</div><div class="metric">Auto</div><div class="sub">Mondays 9:15 AM, direct commit to main after checks pass.</div></div>
           <div class="panel"><div class="metric-label">Next Tool</div><div class="metric" style="font-size:24px">${escapeHtml(nextTool?.title || "Queue complete")}</div><div class="sub">${escapeHtml(nextTool?.url || "No queued tools remaining")}</div></div>
           <div class="panel"><div class="metric-label">Last Log</div><div class="metric" style="font-size:18px">${escapeHtml(latestToolLog || "No runs yet")}</div><div class="sub">seo-ops-data/tool-cron/logs</div></div>
-          <div class="panel"><div class="metric-label">Queue</div><div class="metric">${Object.keys(completedTools).length}/${toolQueue.length}</div><div class="sub">One tool per weekly run</div></div>
+          <div class="panel"><div class="metric-label">Queue</div><div class="metric">${completedToolCount}/${toolQueue.length}</div><div class="sub">One tool per weekly run</div></div>
         </div>
         <div class="panel" style="margin-top:14px">
-          <div class="section-head"><h2>Build Queue</h2><span class="pill ${nextTool ? "warn" : "good"}">${Object.keys(completedTools).length}/${toolQueue.length} complete</span></div>
+          <div class="section-head"><h2>Build Queue</h2><span class="pill ${nextTool ? "warn" : "good"}">${completedToolCount}/${toolQueue.length} complete</span></div>
           <div class="table-wrap">
             <table>
               <thead><tr><th>Tool</th><th>Primary keyword</th><th>Status</th><th>Completed</th><th>Branch</th></tr></thead>
