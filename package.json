@@ -9,6 +9,9 @@
     "build": "tsx script/build.ts",
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
+    "seo:collect": "tsx scripts/seo-ops/collect.ts",
+    "seo:setup": "tsx scripts/seo-ops/setup.ts",
+    "seo:dashboard": "tsx scripts/seo-ops/dashboard.ts",
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
