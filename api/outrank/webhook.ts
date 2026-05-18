@@ -31,6 +31,13 @@ interface GitHubContentResponse {
   encoding: string;
 }
 
+interface GitHubBlobResponse {
+  sha: string;
+  content: string;
+  encoding: string;
+  size: number;
+}
+
 function env(name: string, fallback?: string) {
   const value = process.env[name] || fallback;
   if (!value) throw new Error(`Missing required environment variable: ${name}`);
@@ -104,7 +111,25 @@ async function readCurrentArticles(config: {
   }
 
   const data = (await response.json()) as GitHubContentResponse;
-  const json = JSON.parse(Buffer.from(data.content, "base64").toString("utf8"));
+
+  let rawText: string;
+  if (data.encoding === "base64" && data.content) {
+    rawText = Buffer.from(data.content, "base64").toString("utf8");
+  } else {
+    // Contents API caps inline content at ~1MB; fetch the blob directly (limit 100MB).
+    const blobUrl = `https://api.github.com/repos/${config.owner}/${config.repo}/git/blobs/${data.sha}`;
+    const blobResponse = await fetch(blobUrl, { headers: githubHeaders(config.token) });
+    if (!blobResponse.ok) {
+      throw new Error(`GitHub blob read failed: ${blobResponse.status} ${await blobResponse.text()}`);
+    }
+    const blob = (await blobResponse.json()) as GitHubBlobResponse;
+    if (blob.encoding !== "base64") {
+      throw new Error(`Unexpected blob encoding: ${blob.encoding}`);
+    }
+    rawText = Buffer.from(blob.content, "base64").toString("utf8");
+  }
+
+  const json = JSON.parse(rawText);
   return { sha: data.sha, articles: (json.articles || []) as StoredArticle[] };
 }
 
